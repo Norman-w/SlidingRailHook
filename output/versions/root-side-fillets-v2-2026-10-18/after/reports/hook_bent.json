@@ -1,0 +1,32 @@
+{
+  "path": "/Users/norman/CodeXProjects/SlidingRailHook/output/versions/root-side-fillets-v2-2026-10-18/after/hook_bent.stl",
+  "format": "ascii",
+  "units": "unknown",
+  "triangleCount": 7218,
+  "uniqueVertexCount": 3611,
+  "bounds": {
+    "min": [
+      3.352949641060981,
+      -17.193017973955058,
+      1.7000000000000002
+    ],
+    "max": [
+      14.647050358939019,
+      1.32,
+      14.69991843324464
+    ],
+    "size": [
+      11.294100717878038,
+      18.51301797395506,
+      12.999918433244641
+    ]
+  },
+  "surfaceArea": 663.8200705245201,
+  "signedVolume": 657.2886480855915,
+  "volume": 657.2886480855915,
+  "degenerateTriangleCount": 0,
+  "boundaryEdgeCount": 0,
+  "nonManifoldEdgeCount": 0,
+  "inconsistentOrientationEdgeCount": 0,
+  "watertightByEdgeTopology": true
+}

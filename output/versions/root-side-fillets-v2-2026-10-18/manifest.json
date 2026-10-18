@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "version": "root-side-fillets-v2-2026-10-18",
+  "units": "mm",
+  "description": "Revert X-end sphere caps; add tangent left and right hook-to-base cove fillets.",
+  "sources": {
+    "src/parameters.scad": "cc616feee148ea14028e1945e3b75f1cbaf3fb055cf98db9d26bbffafec74f81",
+    "src/hook_bent.scad": "4c1380ece85b7e16f8b1a3a296baca9b81db244eb4e8cb71e5624179a95cd6b1",
+    "src/step.scad": "6155e62b7d9d5219d9f467e96f697fc8eb2ae86baeae1c7c734c75f333e7c28c",
+    "src/assembly.scad": "7d867f45e6033cd24ffde80720576b893861a32ebfce7d93bc3bd07a16354a80",
+    "src/root_joint_check.scad": "b5543bd1e66632c5afd535b1be1c0dff89d24a96675d7b17293ea7dbac394ecb",
+    "output/3d-print/hook_bent.stl": "98eae9225ac568e5f45b11d978ccc337a1fd2b89b588e7c9a9e48e4b372352b3"
+  },
+  "part": {
+    "partId": "hook_bent",
+    "source": "src/hook_bent.scad",
+    "module": "hook_bent_geometry",
+    "geometrySpace": "local",
+    "parentAssembly": "step",
+    "material": "unspecified FDM prototype",
+    "bbox": {
+      "min": [
+        3.352949641060981,
+        -17.193017973955058,
+        1.7000000000000002
+      ],
+      "max": [
+        14.647050358939019,
+        1.32,
+        14.69991843324464
+      ],
+      "size": [
+        11.294100717878038,
+        18.51301797395506,
+        12.999918433244641
+      ]
+    },
+    "volume": 657.2886480855915,
+    "surfaceArea": 663.8200705245201,
+    "triangles": 7218,
+    "watertight": true,
+    "connectedShells": 1
+  },
+  "joint": {
+    "sideFilletRadius": 1.25,
+    "sideEndRolloff": 0.15,
+    "weldLength": 2,
+    "hookBaseOverlapY": 0.3,
+    "leftStepOverlapVolume": 0.0530293585,
+    "rightStepOverlapVolume": 0.0530293585,
+    "leftHookOverlapVolume": 0.0755571139,
+    "rightHookOverlapVolume": 0.0755571139,
+    "joinedConnectedShells": 1,
+    "railIntersection": "empty"
+  },
+  "unchangedHook": {
+    "straightLength": 12,
+    "arcAngle": 240,
+    "centerlineRadius": 5,
+    "widths": [
+      9,
+      4.5
+    ],
+    "thickness": 3,
+    "arcSide": "+Z"
+  },
+  "checks": {
+    "Manifold": "NoError; genus 0",
+    "CGAL": "Simple: yes",
+    "edgeTopology": "zero degenerate/boundary/non-manifold/inconsistent edges"
+  },
+  "before": "before/",
+  "after": "after/"
+}

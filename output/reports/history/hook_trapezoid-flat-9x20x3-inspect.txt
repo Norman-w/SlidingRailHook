@@ -1,0 +1,7 @@
+文件: /Users/norman/CodeXProjects/SlidingRailHook/output/3d-print/hook_trapezoid.stl
+格式: ascii | 单位: 未知（STL 不携带单位）
+三角形: 12 | 唯一顶点: 8
+包围盒尺寸: [9.0, 20.0, 3.0]
+表面积: 431.256987
+体积绝对值: 405.000000
+拓扑: watertight=True 退化面=0 边界边=0 非流形边=0 方向不一致边=0

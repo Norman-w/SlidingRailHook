@@ -1,0 +1,7 @@
+# Local OS and Python caches.
+.DS_Store
+__pycache__/
+*.pyc
+
+# Recreated local HTTP viewer, machine-specific symlinks, PID and logs.
+output/3d-preview/

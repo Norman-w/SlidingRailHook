@@ -1,0 +1,8 @@
+文件: /Users/norman/CodeXProjects/SlidingRailHook/output/3d-print/hook_bent.stl
+格式: ascii | 单位: 未知（STL 不携带单位）
+三角形: 10526 | 唯一顶点: 5265
+包围盒尺寸: [11.294100717878038, 18.51301797395506, 13.405323838650046]
+表面积: 668.558322
+体积绝对值: 650.406749
+拓扑: watertight=True 退化面=0 边界边=0 非流形边=0 方向不一致边=0
+报告: output/reports/hook_bent-inspect.json

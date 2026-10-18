@@ -1,0 +1,32 @@
+{
+  "path": "/Users/norman/CodeXProjects/SlidingRailHook/output/3d-print/hook_bent.stl",
+  "format": "ascii",
+  "units": "unknown",
+  "triangleCount": 10526,
+  "uniqueVertexCount": 5265,
+  "bounds": {
+    "min": [
+      3.352949641060981,
+      -17.193017973955058,
+      1.2945945945945947
+    ],
+    "max": [
+      14.647050358939019,
+      1.32,
+      14.69991843324464
+    ],
+    "size": [
+      11.294100717878038,
+      18.51301797395506,
+      13.405323838650046
+    ]
+  },
+  "surfaceArea": 668.5583222323712,
+  "signedVolume": 650.4067486301147,
+  "volume": 650.4067486301147,
+  "degenerateTriangleCount": 0,
+  "boundaryEdgeCount": 0,
+  "nonManifoldEdgeCount": 0,
+  "inconsistentOrientationEdgeCount": 0,
+  "watertightByEdgeTopology": true
+}

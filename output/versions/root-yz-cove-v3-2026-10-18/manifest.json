@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "version": "root-yz-cove-v3-2026-10-18",
+  "units": "mm",
+  "description": "Replace reversed convex +Z bead and add -Z cove; preserve +/-X coves.",
+  "sourceSHA256": {
+    "src/parameters.scad": "f3dbdac055565bd0a0eaa18c502e2e556e5c2790c6ab00dddf2ed31b8af2c92f",
+    "src/hook_bent.scad": "3eb395d5081528efd4fda07280c175d17e57be8a990a9f7153f7037ab09c9909",
+    "src/step.scad": "6155e62b7d9d5219d9f467e96f697fc8eb2ae86baeae1c7c734c75f333e7c28c",
+    "src/assembly.scad": "7d867f45e6033cd24ffde80720576b893861a32ebfce7d93bc3bd07a16354a80",
+    "src/root_joint_check.scad": "10b4ab9c2e62f86a114439146ec876e71db568ccb9a876e73c59deb5d93d9f05"
+  },
+  "part": {
+    "id": "hook_bent",
+    "geometrySpace": "local",
+    "parentAssembly": "step",
+    "stlSHA256": "da4f516c8771b6a05a953c0f08ec77d86cd7ff15a44992f9d3f80572ffdd99e1",
+    "volume": 650.4067486301147,
+    "area": 668.5583222323712,
+    "bounds": {
+      "min": [
+        3.352949641060981,
+        -17.193017973955058,
+        1.2945945945945947
+      ],
+      "max": [
+        14.647050358939019,
+        1.32,
+        14.69991843324464
+      ],
+      "size": [
+        11.294100717878038,
+        18.51301797395506,
+        13.405323838650046
+      ]
+    },
+    "triangles": 10526,
+    "vertices": 5265,
+    "connectedShells": 1,
+    "watertight": true
+  },
+  "coves": {
+    "nominalRadius": 1.25,
+    "upperTangentTo": [
+      "base flat face",
+      "hook top"
+    ],
+    "lowerTangentTo": [
+      "base R0.6 lower corner",
+      "hook underside"
+    ],
+    "lowerMinimumZ": 1.294594595,
+    "mountingPlateMaxZ": 1.02,
+    "sideCoves": "unchanged"
+  },
+  "checks": {
+    "CGAL": "Simple: yes",
+    "Manifold": "NoError; Genus 0",
+    "railIntersection": "empty",
+    "measurements": {
+      "hook_bent": {
+        "volume": 650.4067486301147,
+        "area": 668.5583222323712,
+        "bounds": {
+          "min": [
+            3.352949641060981,
+            -17.193017973955058,
+            1.2945945945945947
+          ],
+          "max": [
+            14.647050358939019,
+            1.32,
+            14.69991843324464
+          ],
+          "size": [
+            11.294100717878038,
+            18.51301797395506,
+            13.405323838650046
+          ]
+        },
+        "triangles": 10526,
+        "vertices": 5265,
+        "connectedShells": 1,
+        "watertight": true
+      },
+      "reports/joined": {
+        "volume": 1000.4093272566603,
+        "area": 1565.157393449934,
+        "bounds": {
+          "min": [
+            0.0017110277252379291,
+            -17.193017973955058,
+            1.1051330831757138
+          ],
+          "max": [
+            17.998288972274764,
+            10.998288972274763,
+            14.69991843324464
+          ],
+          "size": [
+            17.996577944549525,
+            28.191306946229822,
+            13.594785350068927
+          ]
+        },
+        "triangles": 12168,
+        "vertices": 6086,
+        "connectedShells": 1,
+        "watertight": true
+      },
+      "reports/upper_step_overlap": {
+        "volume": 0.16870520986938642,
+        "area": 22.997043900663126,
+        "bounds": {
+          "min": [
+            4.5,
+            1.0051330831757137,
+            4.680000000000001
+          ],
+          "max": [
+            13.5,
+            1.02,
+            5.95
+          ],
+          "size": [
+            9,
+            0.014866916824286314,
+            1.2699999999999996
+          ]
+        },
+        "triangles": 108,
+        "vertices": 56,
+        "connectedShells": 1,
+        "watertight": true
+      },
+      "reports/lower_step_overlap": {
+        "volume": 0.062210964383762245,
+        "area": 8.638015740174778,
+        "bounds": {
+          "min": [
+            4.5,
+            1.0051330831757137,
+            1.2945945945945947
+          ],
+          "max": [
+            13.5,
+            1.1776805936112695,
+            1.7200000000000002
+          ],
+          "size": [
+            9,
+            0.17254751043555583,
+            0.4254054054054055
+          ]
+        },
+        "triangles": 1100,
+        "vertices": 552,
+        "connectedShells": 1,
+        "watertight": true
+      },
+      "reports/upper_hook_overlap": {
+        "volume": 0.22544478450458214,
+        "area": 22.9493975372764,
+        "bounds": {
+          "min": [
+            4.517757432758808,
+            -0.25,
+            4.680000000000001
+          ],
+          "max": [
+            13.482242567241192,
+            1.02,
+            4.7
+          ],
+          "size": [
+            8.964485134482384,
+            1.27,
+            0.019999999999999574
+          ]
+        },
+        "triangles": 52,
+        "vertices": 28,
+        "connectedShells": 1,
+        "watertight": true
+      },
+      "reports/lower_hook_overlap": {
+        "volume": 0.13958818070370568,
+        "area": 14.345022596416259,
+        "bounds": {
+          "min": [
+            4.517757432758808,
+            0.23618183030141437,
+            1.7000000000000002
+          ],
+          "max": [
+            13.482242567241192,
+            1.02,
+            1.7200000000000002
+          ],
+          "size": [
+            8.964485134482384,
+            0.7838181696985856,
+            0.020000000000000018
+          ]
+        },
+        "triangles": 68,
+        "vertices": 36,
+        "connectedShells": 1,
+        "watertight": true
+      },
+      "reports/left_step_overlap": {
+        "volume": 0.05302935849838973,
+        "area": 7.003560811356127,
+        "bounds": {
+          "min": [
+            3.352949641060981,
+            1.001711027725238,
+            1.7200000000000002
+          ],
+          "max": [
+            4.5417180534169015,
+            1.02,
+            4.680000000000001
+          ],
+          "size": [
+            1.1887684123559206,
+            0.018288972274762116,
+            2.9600000000000004
+          ]
+        },
+        "triangles": 186,
+        "vertices": 95,
+        "connectedShells": 1,
+        "watertight": true
+      },
+      "reports/right_step_overlap": {
+        "volume": 0.05302935849836661,
+        "area": 7.003560811356125,
+        "bounds": {
+          "min": [
+            13.4582819465831,
+            1.001711027725238,
+            1.7200000000000002
+          ],
+          "max": [
+            14.647050358939019,
+            1.02,
+            4.680000000000001
+          ],
+          "size": [
+            1.1887684123559197,
+            0.018288972274762116,
+            2.9600000000000004
+          ]
+        },
+        "triangles": 186,
+        "vertices": 95,
+        "connectedShells": 1,
+        "watertight": true
+      },
+      "reports/left_hook_overlap": {
+        "volume": 0.07555711385440286,
+        "area": 7.043128864387989,
+        "bounds": {
+          "min": [
+            4.517757432758808,
+            -0.16482614593299272,
+            1.7200000000000002
+          ],
+          "max": [
+            4.61999794743141,
+            1.02,
+            4.680000000000001
+          ],
+          "size": [
+            0.10224051467260242,
+            1.1848261459329927,
+            2.9600000000000004
+          ]
+        },
+        "triangles": 234,
+        "vertices": 119,
+        "connectedShells": 1,
+        "watertight": true
+      },
+      "reports/right_hook_overlap": {
+        "volume": 0.07555711385440458,
+        "area": 7.043128864387988,
+        "bounds": {
+          "min": [
+            13.380002052568589,
+            -0.16482614593299272,
+            1.7200000000000002
+          ],
+          "max": [
+            13.482242567241192,
+            1.02,
+            4.680000000000001
+          ],
+          "size": [
+            0.10224051467260331,
+            1.1848261459329927,
+            2.9600000000000004
+          ]
+        },
+        "triangles": 234,
+        "vertices": 119,
+        "connectedShells": 1,
+        "watertight": true
+      },
+      "reports/upper_fillet": {
+        "volume": 3.438357120591238,
+        "area": 41.12264665065219,
+        "bounds": {
+          "min": [
+            4.5,
+            -0.25,
+            4.680000000000001
+          ],
+          "max": [
+            13.5,
+            1.02,
+            5.95
+          ],
+          "size": [
+            9,
+            1.27,
+            1.2699999999999996
+          ]
+        },
+        "triangles": 1292,
+        "vertices": 648,
+        "connectedShells": 1,
+        "watertight": true
+      },
+      "reports/lower_fillet": {
+        "volume": 0.849813256868385,
+        "area": 20.931747505106426,
+        "bounds": {
+          "min": [
+            4.5,
+            0.23618183030141437,
+            1.2945945945945947
+          ],
+          "max": [
+            13.5,
+            1.1776805936112695,
+            1.7200000000000002
+          ],
+          "size": [
+            9,
+            0.9414987633098552,
+            0.4254054054054055
+          ]
+        },
+        "triangles": 2156,
+        "vertices": 1080,
+        "connectedShells": 1,
+        "watertight": true
+      }
+    }
+  },
+  "before": "before/",
+  "after": "after/"
+}
