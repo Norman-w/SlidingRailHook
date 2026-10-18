@@ -5,6 +5,8 @@ use <hook_bent.scad>
 use <rail.scad>
 
 joint_check = "joined";
+corner_side = 1;
+corner_z_side = 1;
 
 if (joint_check == "joined")
     union() {
@@ -60,3 +62,9 @@ else if (joint_check == "upper_fillet")
     hook_bond_face_fillet(1);
 else if (joint_check == "lower_fillet")
     hook_bond_face_fillet(-1);
+else if (joint_check == "corner")
+    hook_bond_corner_fillet(corner_side, corner_z_side);
+else if (joint_check == "side_fillet")
+    hook_bond_side_fillet(corner_side);
+else if (joint_check == "weld")
+    hook_bent_segment(0, hook_bent_weld_length, 0, 0);

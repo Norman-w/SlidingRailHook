@@ -1,0 +1,193 @@
+{
+  "units": "mm",
+  "parts": {
+    "rail": {
+      "path": "stl/rail.stl",
+      "sha256": "7d4055c5e56bfa72ee16d1d7c97df3db85731e61821771bd0ea5d93ba87130f8",
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          300.0,
+          12.0,
+          5.799999237060547
+        ]
+      ],
+      "size_mm": [
+        300.0,
+        12.0,
+        5.799999237060547
+      ],
+      "volume_mm3": 7247.997093200684,
+      "triangles": 44,
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_solids": 1,
+      "degenerate_faces": 0
+    },
+    "slider_hook": {
+      "path": "stl/slider_hook.stl",
+      "sha256": "2e5a8adbca710531f4d239e1fc1e1e35b5a255b9aa0f3830598db623295e47d0",
+      "bounds_mm": [
+        [
+          0.0017108917236328125,
+          -17.193017959594727,
+          1.105133056640625
+        ],
+        [
+          17.998287200927734,
+          10.99828815460205,
+          14.699917793273926
+        ]
+      ],
+      "size_mm": [
+        17.9965763092041,
+        28.191306114196777,
+        13.5947847366333
+      ],
+      "volume_mm3": 1000.8445656776333,
+      "triangles": 14408,
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_solids": 1,
+      "degenerate_faces": 0
+    },
+    "end_stop_left": {
+      "path": "stl/end_stop_left.stl",
+      "sha256": "76f2e7610b98787906d674fc6e3e06a6554c3f306124d198409c26642c13d792",
+      "bounds_mm": [
+        [
+          -8.0,
+          0.6999998092651367,
+          3.5
+        ],
+        [
+          0.0,
+          11.299999237060547,
+          7.799999237060547
+        ]
+      ],
+      "size_mm": [
+        8.0,
+        10.59999942779541,
+        4.299999237060547
+      ],
+      "volume_mm3": 194.11996047973753,
+      "triangles": 36,
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_solids": 1,
+      "degenerate_faces": 0
+    },
+    "end_stop_right": {
+      "path": "stl/end_stop_right.stl",
+      "sha256": "f045f6db4528ef37d675be99fae05921e4f5a77d558c8eec566f326006b26dd4",
+      "bounds_mm": [
+        [
+          0.0,
+          0.6999998092651367,
+          3.5
+        ],
+        [
+          8.0,
+          11.299999237060547,
+          7.799999237060547
+        ]
+      ],
+      "size_mm": [
+        8.0,
+        10.59999942779541,
+        4.299999237060547
+      ],
+      "volume_mm3": 194.11996047973753,
+      "triangles": 36,
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_solids": 1,
+      "degenerate_faces": 0
+    }
+  },
+  "export_backend": "OpenSCAD CGAL",
+  "independent_checks": "trimesh topology and manifold3d solid booleans",
+  "sources": {
+    "src/assembly.scad": "7d867f45e6033cd24ffde80720576b893861a32ebfce7d93bc3bd07a16354a80",
+    "src/end_stop.scad": "31c68055baa6fc30487cc076f8954bac26a5ed96a8586de0bb3d84b126858419",
+    "src/hook.scad": "aad0fc2bae92aa0020d33fbfe4aea0da51092c6ed1f412dae722b9b10114707a",
+    "src/hook_bent.scad": "e5bc6c82d8c30eea0803c7177e5a52d19735da50ac0dfa47a7798eb9d0802372",
+    "src/hook_trapezoid.scad": "be4d5e86fe35356e26b2fcf130358701e83d34c8e8c485fda9e1506f5502c63a",
+    "src/parameters.scad": "25399cd5665cf6f287e6e066a68e20cbf80c38b824b06ff48a25575a3a2991ff",
+    "src/rail.scad": "b354097197169c7674b5033a4693622e6c789f6d5ca6a816887c2ac2ef112b50",
+    "src/root_joint_check.scad": "7c08f1f050c8d8f30dfe88e34aace7966efaae016952573e3fa83e3934fcccab",
+    "src/scripts/export_parts.sh": "f12947d33a0cf25b411c90583264d2c02e78f9a1506fe3e033fab9cb7e15a969",
+    "src/scripts/package_release.py": "21bb1fe80f30e45c03f9d4d2a04c2f3dc1db6a27b7dd509442d2b6a865020fb3",
+    "src/scripts/verify_release.py": "8566984d1eab215902deb6564a9e48eb3fd04445f7069efa9f08d3c844af6dee",
+    "src/slider_hook.scad": "97d871ef67f36bc5d5d1f089183385de9260ed425bdafc0e950c977fd34a3406",
+    "src/step.scad": "6155e62b7d9d5219d9f467e96f697fc8eb2ae86baeae1c7c734c75f333e7c28c"
+  },
+  "root_corners": {
+    "corner_-1_-1": {
+      "volume_mm3": 0.0632972799875644,
+      "overlap_mm3": {
+        "base": 0.023512709098171745,
+        "hook_weld": 0.00033948963774921173,
+        "side_cove": 0.009341777624916791,
+        "face_cove": 0.002791436954071839
+      },
+      "missing_from_final_mm3": 3.147209680327936e-12,
+      "newly_filled_vs_v3_mm3": 0.03796984730590409
+    },
+    "corner_-1_1": {
+      "volume_mm3": 0.1607400624983135,
+      "overlap_mm3": {
+        "base": 0.017390412273871537,
+        "hook_weld": 0.00038469091282367323,
+        "side_cove": 0.009950837689722223,
+        "face_cove": 0.011425944854597608
+      },
+      "missing_from_final_mm3": 6.037393973028235e-09,
+      "newly_filled_vs_v3_mm3": 0.13727232124582575
+    },
+    "corner_1_-1": {
+      "volume_mm3": 0.06329728350673193,
+      "overlap_mm3": {
+        "base": 0.023512717406081716,
+        "hook_weld": 0.00033948912978467216,
+        "side_cove": 0.009341776918526813,
+        "face_cove": 0.0027913454761296095
+      },
+      "missing_from_final_mm3": 3.4977432789392157e-10,
+      "newly_filled_vs_v3_mm3": 0.03797264710101882
+    },
+    "corner_1_1": {
+      "volume_mm3": 0.16074004449100318,
+      "overlap_mm3": {
+        "base": 0.017390412778928936,
+        "hook_weld": 0.0003846891534168293,
+        "side_cove": 0.009950834720454793,
+        "face_cove": 0.011425601986657699
+      },
+      "missing_from_final_mm3": 5.8479042736538066e-08,
+      "newly_filled_vs_v3_mm3": 0.13727237310940144
+    }
+  },
+  "rail_collision_volume_mm3": {
+    "0": 0.0,
+    "1": 0.0,
+    "5": 0.0,
+    "110": 0.0,
+    "141": 0.0,
+    "282": 0.0
+  },
+  "v3_regression": {
+    "baseline": "root-yz-cove-v3",
+    "baseline_sha256": "d0860db82ba2ac647101d60625cf3530f5cef7066a1760a47fc724f8bdf5db96",
+    "outside_root_difference_mm3": 0.000800444075927909,
+    "outside_root_tolerance_mm3": 0.005,
+    "added_mm3": 0.4358311267995161,
+    "removed_mm3": 0.0006939882592170286
+  },
+  "physical_fit_load_and_slicing": "not tested"
+}

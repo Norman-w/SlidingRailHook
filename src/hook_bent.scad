@@ -152,39 +152,28 @@ function hook_bond_face_profile(z_side, r) =
                  [[-join_overlap, span], [-join_overlap, -join_overlap]]);
 
 module hook_bond_face_fillet(z_side) {
-    x0 = hook_carriage_length/2 - bond_fillet_width_x/2;
-    x1 = x0 + bond_fillet_width_x;
-    // Roll the two X ends back into the existing side joints; the central
-    // cross-section has the exact concave R1.25 surface, not a convex bead.
-    starts = [for (i=[0:8]) let(a=90*i/8)
-        [x0 + bond_face_end_roll*(1-cos(a)),
-         max(join_overlap, bond_fillet_radius*sin(a))]];
-    ends = [for (i=[8:-1:0]) let(a=90*i/8)
-        [x1 - bond_face_end_roll*(1-cos(a)),
-         max(join_overlap, bond_fillet_radius*sin(a))]];
-    stations = concat(starts, ends);
-    count = len(hook_bond_face_profile(z_side, bond_fillet_radius));
-    layers = len(stations);
-    points = [for (station=stations)
-        for (p=hook_bond_face_profile(z_side, station[1]))
-            [p[0], p[1], station[0]]];
-    faces = concat(
-        [[for (j=[count-1:-1:0]) j]],
-        [for (i=[0:layers-2]) for (j=[0:count-1])
-            [i*count+j, i*count+(j+1)%count, (i+1)*count+(j+1)%count]],
-        [for (i=[0:layers-2]) for (j=[0:count-1])
-            [i*count+j, (i+1)*count+(j+1)%count, (i+1)*count+j]],
-        [[for (j=[0:count-1]) (layers-1)*count+j]]);
+    // Keep the full cove all the way to the tapered side. The four corner
+    // patches continue it around the root; independent end rolls left gaps.
     face_z = z_side > 0 ? hook_trapezoid_z1 : hook_trapezoid_z0;
-    multmatrix([
-        [0, 0, 1, 0],
-        [0, -1, 0, hook_outer_y0],
-        [z_side, 0, 0, face_z],
-        [0, 0, 0, 1]
-    ])
-        polyhedron(points=points,
-                   faces=[for (face=faces) [for (j=[len(face)-1:-1:0]) face[j]]],
-                   convexity=4);
+    intersection() {
+        multmatrix([
+            [0, 0, 1, 0],
+            [0, -1, 0, hook_outer_y0],
+            [z_side, 0, 0, face_z],
+            [0, 0, 0, 1]
+        ])
+            linear_extrude(height=hook_carriage_length)
+                polygon(points=hook_bond_face_profile(z_side,bond_fillet_radius));
+        // Cut by the true tapered sides using a second 2D extrusion. This
+        // avoids near-planar floating-point polygon caps in the CGAL backend.
+        linear_extrude(height=hook_outer_z1+bond_fillet_radius)
+            polygon(points=[for (p=[[-1,-bond_face_base_radius-join_overlap],
+                                    [1,-bond_face_base_radius-join_overlap],
+                                    [1,bond_fillet_radius+join_overlap],
+                                    [-1,bond_fillet_radius+join_overlap]])
+                [hook_carriage_length/2+p[0]*(bond_side_corner_half_width-
+                    bond_side_taper*p[1]+join_overlap), hook_outer_y0-p[1]]]);
+    }
 }
 
 module hook_bond_fillet() {
@@ -210,22 +199,13 @@ function hook_bond_side_profile(r=bond_side_profile_radius) =
 module hook_bond_side_fillet(side) {
     corner_x = hook_carriage_length / 2 +
                side * bond_side_corner_half_width;
-    // Roll each exposed Z end into the existing hook/base corner. All XY
-    // sections remain tangent to the actual parent faces, including taper.
-    // A tiny end section lies in the positive-overlap weld region.
-    lower = [for (i = [0:8]) let(a=90*i/8)
-        [hook_trapezoid_z0 + join_overlap +
-             bond_side_edge_radius*(1-cos(a)),
-         max(join_overlap, bond_fillet_radius*sin(a))]];
-    upper = [for (i = [8:-1:0]) let(a=90*i/8)
-        [hook_trapezoid_z1 - join_overlap -
-             bond_side_edge_radius*(1-cos(a)),
-         max(join_overlap, bond_fillet_radius*sin(a))]];
-    stations = concat(lower, upper);
+    // Full-radius side cove overlaps the continuous corner patches at Z ends.
+    stations = [hook_trapezoid_z0 - join_overlap,
+                hook_trapezoid_z1 + join_overlap];
     count = len(hook_bond_side_profile());
     layers = len(stations);
     points = [for (station=stations)
-        for (p=hook_bond_side_profile(station[1])) [p[0],p[1],station[0]]];
+        for (p=hook_bond_side_profile()) [p[0],p[1],station]];
     faces = concat(
         [[for (j=[count-1:-1:0]) j]],
         [for (i=[0:layers-2]) for (j=[0:count-1])
@@ -242,6 +222,64 @@ module hook_bond_side_fillet(side) {
         polyhedron(points=points,
                    faces=[for (face=faces) [for (j=[len(face)-1:-1:0]) face[j]]],
                    convexity=4);
+}
+
+// Boundary curves of the existing coves, parameterized from base to hook.
+// The underside uses the real rounded base corner, not a fictitious flat wall.
+function hook_bond_side_arc(t) =
+    let(r=bond_fillet_radius, k=bond_side_taper,
+        a=r*(sqrt(1+k*k)-k), angle=-90+(-90+atan(k))*t)
+    [a+r*cos(angle), r+r*sin(angle)];
+
+function hook_bond_face_arc(z_side, t) =
+    let(r=bond_fillet_radius, b=bond_face_base_radius,
+        span=bond_face_lower_span,
+        tu=b*r/(b+r), tv=-b+b*(span+b)/(b+r),
+        start=z_side>0 ? -90 : atan2(tv-span, tu-r),
+        angle=start+(-180-start)*t)
+    [r+r*cos(angle), (z_side>0 ? r : span)+r*sin(angle)];
+
+function hook_bond_corner_point(side, z_side, row, column, inside=false) =
+    let(t=max(0,row)/bond_corner_curve_steps,
+        phi=90*column/bond_corner_wrap_steps,
+        w=pow(sin(phi),2),
+        a=hook_bond_side_arc(t), b=hook_bond_face_arc(z_side,t),
+        // The first row is buried in the base, giving real volume overlap.
+        v=(1-w)*a[1]+w*b[1]-(row<0 ? join_overlap : 0),
+        dx=inside ? -join_overlap*(1-cos(phi)/2) :
+                    max(join_overlap/4,a[0]+bond_side_taper*a[1])*cos(phi),
+        dz=inside ? -join_overlap*(1-sin(phi)/2) :
+                    max(join_overlap/4,b[0])*sin(phi))
+    [hook_carriage_length/2+side*(bond_side_corner_half_width-
+        bond_side_taper*v+dx), hook_outer_y0-v,
+     (z_side>0 ? hook_trapezoid_z1 : hook_trapezoid_z0)+z_side*dz];
+
+module hook_bond_corner_fillet(side, z_side) {
+    // A closed quarter-wrap solid, not four touching balls or a convex bead.
+    // sin(phi)^2 gives a zero cross-derivative at each neighboring cove,
+    // keeping the transition tangent while respecting the side taper.
+    rows=bond_corner_curve_steps+2;
+    cols=bond_corner_wrap_steps+1;
+    sheet=rows*cols;
+    points=[for (inside=[false,true]) for (i=[0:rows-1])
+        for (j=[0:cols-1]) hook_bond_corner_point(side,z_side,i-1,j,inside)];
+    faces=concat(
+        [for (i=[0:rows-2]) for (j=[0:cols-2])
+            [i*cols+j,i*cols+j+1,(i+1)*cols+j+1,(i+1)*cols+j]],
+        [for (i=[0:rows-2]) for (j=[0:cols-2])
+            [sheet+i*cols+j,sheet+(i+1)*cols+j,
+             sheet+(i+1)*cols+j+1,sheet+i*cols+j+1]],
+        [for (j=[0:cols-2]) [j,sheet+j,sheet+j+1,j+1]],
+        [for (j=[0:cols-2]) let(a=(rows-1)*cols+j)
+            [a,a+1,sheet+a+1,sheet+a]],
+        [for (i=[0:rows-2]) let(a=i*cols,b=(i+1)*cols)
+            [a,b,sheet+b,sheet+a]],
+        [for (i=[0:rows-2]) let(a=i*cols+cols-1,b=(i+1)*cols+cols-1)
+            [a,sheet+a,sheet+b,b]]);
+    triangles=[for (face=faces) for (j=[1:len(face)-2])
+        [face[0],face[j],face[j+1]]];
+    polyhedron(points=points, faces=side*z_side<0 ? triangles :
+        [for (face=triangles) [face[2],face[1],face[0]]], convexity=6);
 }
 
 module hook_bent_geometry() {
@@ -297,6 +335,9 @@ module hook_bent_geometry() {
         if (bond_side_enabled)
             for (side = [-1, 1])
                 hook_bond_side_fillet(side);
+        if (bond_corner_enabled && bond_face_enabled && bond_side_enabled)
+            for (side=[-1,1]) for (z_side=[-1,1])
+                hook_bond_corner_fillet(side,z_side);
         hook_bent_end_cap();
     }
 }

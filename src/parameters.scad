@@ -136,6 +136,11 @@ bond_side_reach_x = bond_side_profile_radius *
                     (sqrt(1 + bond_side_taper * bond_side_taper) -
                      bond_side_taper) + join_overlap;
 bond_side_enabled = true;
+// Continuous four-way corner wrap; legacy end-roll settings above are kept
+// only for historical source compatibility and no longer shorten the coves.
+bond_corner_enabled = true;
+bond_corner_curve_steps = 32;
+bond_corner_wrap_steps = 24;
 
 // H-flange capture: two door-side lips under the flange, with a central
 // relief slot for the vertical web. The flange remains between these lips
@@ -296,6 +301,8 @@ assert(hook_outer_y0 + bond_face_base_radius *
              (bond_face_base_radius + bond_fillet_radius)) +
        join_overlap < hook_inner_y0);
 assert(bond_side_edge_radius > 0);
+assert(bond_corner_curve_steps >= 16);
+assert(bond_corner_wrap_steps >= 16);
 assert(2 * bond_side_edge_radius < hook_bent_plate_thickness_z);
 assert(hook_carriage_length / 2 - bond_side_corner_half_width -
        bond_side_reach_x > hook_carriage_corner_radius);
