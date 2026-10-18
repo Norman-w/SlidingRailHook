@@ -1,0 +1,12 @@
+# Reproducible local experiment caches; preserve configs, poses and summaries.
+/plate_1.gcode
+/slice.log
+/toolpaths-review.svg
+/source/export.log
+/trials/*/hook.stl
+/trials/*/plate_1.gcode
+/trials/*/slice.log
+/trials/*/sliced.3mf
+/quality/*/plate_1.gcode
+/quality/*/slice.log
+/quality/*/sliced.3mf

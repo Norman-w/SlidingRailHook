@@ -15,6 +15,15 @@
 - [根部等轴近景](output/releases/v0.1.0/renders/root-isometric-axes.png)
 - [根部背侧近景](output/releases/v0.1.0/renders/root-underside-axes.png)
 
+## 一板 12 个 · PETG 打印项目
+
+- [下载 X1 Carbon / 0.4 mm / PETG / 0.12 mm 已切片 3MF](output/print-12-v1/hook-12-PETG-X1C-0p4-0p12.3mf)
+- [打印配置、支撑比较与验证边界](output/print-12-v1/README.md)
+- [实际 G-code 支撑路径图](output/print-12-v1/toolpaths-review.png)
+- [排版及支撑验证报告](output/print-12-v1/plate-validation.json)
+
+侧放、Snug 紧贴式普通支撑，一板 12 个一体挂钩，不含导轨与端塞。切片估算总耗材 16.6 g（支撑约 2.6 g），约 2 小时 33 分钟。已通过网格、数量、排版、CLI 重开和支撑路径抽样检查；原生 GUI 预览、实物表面、配合与承载仍待确认，未发送打印任务。
+
 ## 打印件
 
 | 文件 | 说明 |
@@ -59,6 +68,6 @@ sh src/scripts/export_parts.sh output/my-build
 
 ## 验证边界
 
-这是 FDM 原型，尚未做指定材料、喷嘴和层高的切片或实物承载测试。0.30 mm 间隙仍须打印试配；一毫米薄壁、胶带/粘接固定、端挡块保持力、首层、支撑和长期耐久需实际确认。轨道为 300 mm 单件，请先确认打印床能够容纳。
+这是 FDM 原型。上面的打印项目已完成 X1 Carbon / 0.4 mm / PETG / 0.12 mm 的挂钩切片与静态验证，未做实物承载测试。0.30 mm 间隙仍须打印试配；一毫米薄壁、胶带/粘接固定、端挡块保持力、首层、支撑和长期耐久需实际确认。轨道为 300 mm 单件，请先确认打印床能够容纳；12 件挂钩打印项目不包含轨道。
 
 公开仓库和下载文件不代表额定承载、安全认证或实物配合已经通过。

@@ -1,0 +1,3 @@
+-r requirements-qa.txt
+scipy==1.18.1
+rtree==1.4.1

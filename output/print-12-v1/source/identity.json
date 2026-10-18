@@ -1,0 +1,16 @@
+{
+  "source_commit": "8c50913f0cba1a14245644626fdce696a7063f43",
+  "sources": {
+    "src/assembly.scad": "7d867f45e6033cd24ffde80720576b893861a32ebfce7d93bc3bd07a16354a80",
+    "src/end_stop.scad": "31c68055baa6fc30487cc076f8954bac26a5ed96a8586de0bb3d84b126858419",
+    "src/hook.scad": "aad0fc2bae92aa0020d33fbfe4aea0da51092c6ed1f412dae722b9b10114707a",
+    "src/hook_bent.scad": "e5bc6c82d8c30eea0803c7177e5a52d19735da50ac0dfa47a7798eb9d0802372",
+    "src/hook_trapezoid.scad": "be4d5e86fe35356e26b2fcf130358701e83d34c8e8c485fda9e1506f5502c63a",
+    "src/parameters.scad": "25399cd5665cf6f287e6e066a68e20cbf80c38b824b06ff48a25575a3a2991ff",
+    "src/rail.scad": "b354097197169c7674b5033a4693622e6c789f6d5ca6a816887c2ac2ef112b50",
+    "src/root_joint_check.scad": "7c08f1f050c8d8f30dfe88e34aace7966efaae016952573e3fa83e3934fcccab",
+    "src/slider_hook.scad": "97d871ef67f36bc5d5d1f089183385de9260ed425bdafc0e950c977fd34a3406",
+    "src/step.scad": "6155e62b7d9d5219d9f467e96f697fc8eb2ae86baeae1c7c734c75f333e7c28c"
+  },
+  "stl_sha256": "d9174856fd90c59cb9a61319672b1308474add2d5c24631091eef6bb91579e7d"
+}

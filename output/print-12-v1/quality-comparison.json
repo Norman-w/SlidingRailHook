@@ -1,0 +1,158 @@
+[
+  {
+    "file": "output/print-12-v1/quality/side-tree/sliced.3mf",
+    "total_g": 1.91,
+    "total_seconds": 2002,
+    "support_g": 0.4370614780677377,
+    "feature_g": {
+      "Support": 0.396317233159537,
+      "Brim": 0.016039049729050032,
+      "Outer wall": 0.6207107357609314,
+      "Support interface": 0.04074424490820071,
+      "Inner wall": 0.44909849377571703,
+      "Overhang wall": 0.007224720394748742,
+      "Bridge": 0.000209766797107896,
+      "Internal solid infill": 0.028531186379233752,
+      "Sparse infill": 0.011586476827750596,
+      "Top surface": 0.005561218069121392,
+      "Gap infill": 0.00039323255849253036
+    },
+    "feature_segment_counts": {
+      "Support": 4168,
+      "Brim": 263,
+      "Outer wall": 12769,
+      "Support interface": 1201,
+      "Inner wall": 5368,
+      "Overhang wall": 196,
+      "Bridge": 5,
+      "Internal solid infill": 282,
+      "Sparse infill": 97,
+      "Top surface": 71,
+      "Gap infill": 63
+    },
+    "warnings": [],
+    "printer": "Bambu Lab X1 Carbon 0.4 nozzle",
+    "filament": [
+      "PETG"
+    ],
+    "layer_mm": "0.12",
+    "variant": "side-tree"
+  },
+  {
+    "file": "output/print-12-v1/quality/original-tree/sliced.3mf",
+    "total_g": 2.05,
+    "total_seconds": 1730,
+    "support_g": 0.6088529397702596,
+    "feature_g": {
+      "Support": 0.5218005437416975,
+      "Support interface": 0.08705239602856203,
+      "Brim": 0.011213833001055265,
+      "Outer wall": 0.3036163766018965,
+      "Overhang wall": 0.02141875704989357,
+      "Inner wall": 0.3466714470041612,
+      "Bridge": 0.06583570791165232,
+      "Internal solid infill": 0.28201360394318203,
+      "Sparse infill": 0.0286077984554177,
+      "Top surface": 0.04729063684852538,
+      "Gap infill": 4.856985690896774e-06
+    },
+    "feature_segment_counts": {
+      "Support": 7225,
+      "Support interface": 1223,
+      "Brim": 89,
+      "Outer wall": 3736,
+      "Overhang wall": 116,
+      "Inner wall": 3063,
+      "Bridge": 168,
+      "Internal solid infill": 2111,
+      "Sparse infill": 236,
+      "Top surface": 153,
+      "Gap infill": 1
+    },
+    "warnings": [],
+    "printer": "Bambu Lab X1 Carbon 0.4 nozzle",
+    "filament": [
+      "PETG"
+    ],
+    "layer_mm": "0.12",
+    "variant": "original-tree"
+  },
+  {
+    "file": "output/print-12-v1/quality/side-snug/sliced.3mf",
+    "total_g": 1.69,
+    "total_seconds": 1707,
+    "support_g": 0.21753045963170364,
+    "feature_g": {
+      "Support": 0.16475662195591428,
+      "Brim": 0.01566860529210088,
+      "Outer wall": 0.6207122020207746,
+      "Support interface": 0.05277383767578937,
+      "Inner wall": 0.44909479757905263,
+      "Overhang wall": 0.00722508695970806,
+      "Bridge": 0.00015517916547355088,
+      "Internal solid infill": 0.02853540187624966,
+      "Sparse infill": 0.011669442696536287,
+      "Top surface": 0.005561004239562861,
+      "Gap infill": 0.0003983033737423053
+    },
+    "feature_segment_counts": {
+      "Support": 860,
+      "Brim": 252,
+      "Outer wall": 12555,
+      "Support interface": 395,
+      "Inner wall": 5415,
+      "Overhang wall": 197,
+      "Bridge": 4,
+      "Internal solid infill": 272,
+      "Sparse infill": 97,
+      "Top surface": 71,
+      "Gap infill": 63
+    },
+    "warnings": [],
+    "printer": "Bambu Lab X1 Carbon 0.4 nozzle",
+    "filament": [
+      "PETG"
+    ],
+    "layer_mm": "0.12",
+    "variant": "side-snug"
+  },
+  {
+    "file": "output/print-12-v1/quality/side-normal/sliced.3mf",
+    "total_g": 1.94,
+    "total_seconds": 1809,
+    "support_g": 0.4756787298082425,
+    "feature_g": {
+      "Support": 0.3156262970500857,
+      "Brim": 0.011125429752062477,
+      "Outer wall": 0.6207122020207592,
+      "Support interface": 0.16005243275815678,
+      "Inner wall": 0.44909479757903964,
+      "Overhang wall": 0.007225086959706497,
+      "Bridge": 0.00015517916547355088,
+      "Internal solid infill": 0.02853540187624784,
+      "Sparse infill": 0.01166944269653646,
+      "Top surface": 0.005561004239562861,
+      "Gap infill": 0.0003983033737423053
+    },
+    "feature_segment_counts": {
+      "Support": 587,
+      "Brim": 219,
+      "Outer wall": 12555,
+      "Support interface": 861,
+      "Inner wall": 5415,
+      "Overhang wall": 197,
+      "Bridge": 4,
+      "Internal solid infill": 272,
+      "Sparse infill": 97,
+      "Top surface": 71,
+      "Gap infill": 63
+    },
+    "warnings": [],
+    "printer": "Bambu Lab X1 Carbon 0.4 nozzle",
+    "filament": [
+      "PETG"
+    ],
+    "layer_mm": "0.12",
+    "variant": "side-normal"
+  }
+]

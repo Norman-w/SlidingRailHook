@@ -1,0 +1,18 @@
+{
+  "near_surface_interface_samples": 202,
+  "sliding_cavity_samples": 0,
+  "hook_forward_face_samples": 0,
+  "original_contact_bounds_mm": [
+    [
+      11.327343922670046,
+      -16.51094309660857,
+      1.827419251106849
+    ],
+    [
+      13.562875372833357,
+      0.37150063557554347,
+      14.066745398262789
+    ]
+  ],
+  "note": "G-code interface centerlines within 0.55 mm of a downward-facing surface; physical marks remain untested"
+}
