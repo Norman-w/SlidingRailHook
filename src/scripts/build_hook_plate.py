@@ -4,6 +4,7 @@ import argparse
 from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
+import math
 from pathlib import Path
 import subprocess
 import xml.etree.ElementTree as ET
@@ -92,9 +93,11 @@ def prepare(out):
     })
 
 
-def poses(out):
+def poses(out, names=None):
     mesh = trimesh.load_mesh(out / 'source/slider_hook.stl')
     for name, angles in ORIENTATIONS.items():
+        if names is not None and name not in names:
+            continue
         transform = trimesh.transformations.euler_matrix(*np.radians(angles))
         oriented = mesh.copy()
         oriented.apply_transform(transform)
@@ -188,13 +191,14 @@ def model_plate(out, name, count=12):
     width, depth, _ = mesh.extents
     pitch_x, pitch_y = width+12, depth+12
     positions = []
+    columns=min(4,count);rows=math.ceil(count/columns)
     for i in range(count):
-        x = 128-1.5*pitch_x-width/2+(i%4)*pitch_x
-        y = 128-pitch_y-depth/2+(i//4)*pitch_y
+        x = 128-(columns-1)*pitch_x/2-width/2+(i%columns)*pitch_x
+        y = 128-(rows-1)*pitch_y/2-depth/2+(i//columns)*pitch_y
         ET.SubElement(build, f'{{{NS}}}item', objectid='1',
                       transform=f'1 0 0 0 1 0 0 0 1 {x:.9g} {y:.9g} 0')
         positions.append([x, y, 0])
-    target = out / 'hook-12-arranged.3mf'
+    target = out / f'hook-{count}-arranged.3mf'
     with ZipFile(target, 'w', ZIP_DEFLATED) as package:
         package.writestr('[Content_Types].xml',
             '<?xml version="1.0"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">'

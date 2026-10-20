@@ -1,0 +1,187 @@
+{
+  "units": "mm",
+  "parts": {
+    "rail": {
+      "path": "stl/rail.stl",
+      "sha256": "dd6c7755b5ee4c90915320cc20f3e0ef5e3d07986365384de9fa9d0fa100b9a0",
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          300.0,
+          12.0,
+          6.0
+        ]
+      ],
+      "size_mm": [
+        300.0,
+        12.0,
+        6.0
+      ],
+      "volume_mm3": 8400.0,
+      "triangles": 44,
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_solids": 1,
+      "degenerate_faces": 0
+    },
+    "slider_hook": {
+      "path": "stl/slider_hook.stl",
+      "sha256": "aee2c995a07225ab71ccd4d5c217b98729cf1453ae9f9b4f36e7bab0bde7973a",
+      "bounds_mm": [
+        [
+          0.0017108917236328125,
+          -19.493017196655273,
+          1.105133056640625
+        ],
+        [
+          17.998287200927734,
+          13.298288345336914,
+          14.699917793273926
+        ]
+      ],
+      "size_mm": [
+        17.9965763092041,
+        32.79130554199219,
+        13.5947847366333
+      ],
+      "volume_mm3": 1236.5004511198742,
+      "triangles": 14404,
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_solids": 1,
+      "degenerate_faces": 0
+    },
+    "end_stop_left": {
+      "path": "stl/end_stop_left.stl",
+      "sha256": "fceafcaf4d53df342878695bb6e317af8a476f4eb8d00ae9fb00cbfc4d9c41e1",
+      "bounds_mm": [
+        [
+          -8.0,
+          -1.2999992370605469,
+          3.6999998092651367
+        ],
+        [
+          0.0,
+          13.299999237060547,
+          8.0
+        ]
+      ],
+      "size_mm": [
+        8.0,
+        14.599998474121094,
+        4.300000190734863
+      ],
+      "volume_mm3": 258.92004802703013,
+      "triangles": 36,
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_solids": 1,
+      "degenerate_faces": 0
+    },
+    "end_stop_right": {
+      "path": "stl/end_stop_right.stl",
+      "sha256": "3454efd62d1224e049c901fb8b7aad1b905dcb73f963581d97b860d707d8d2e7",
+      "bounds_mm": [
+        [
+          0.0,
+          -1.2999992370605469,
+          3.6999998092651367
+        ],
+        [
+          8.0,
+          13.299999237060547,
+          8.0
+        ]
+      ],
+      "size_mm": [
+        8.0,
+        14.599998474121094,
+        4.300000190734863
+      ],
+      "volume_mm3": 258.92004802703013,
+      "triangles": 36,
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_solids": 1,
+      "degenerate_faces": 0
+    }
+  },
+  "export_backend": "OpenSCAD CGAL",
+  "independent_checks": "trimesh topology and manifold3d solid booleans",
+  "sources": {
+    "src/assembly.scad": "7d867f45e6033cd24ffde80720576b893861a32ebfce7d93bc3bd07a16354a80",
+    "src/end_stop.scad": "31c68055baa6fc30487cc076f8954bac26a5ed96a8586de0bb3d84b126858419",
+    "src/hook.scad": "aad0fc2bae92aa0020d33fbfe4aea0da51092c6ed1f412dae722b9b10114707a",
+    "src/hook_bent.scad": "e5bc6c82d8c30eea0803c7177e5a52d19735da50ac0dfa47a7798eb9d0802372",
+    "src/hook_trapezoid.scad": "be4d5e86fe35356e26b2fcf130358701e83d34c8e8c485fda9e1506f5502c63a",
+    "src/parameters.scad": "c0ef0cfaecc02597158f4d7258ffcb43a847ea7c958173a5fb1e5ea7f088952e",
+    "src/rail.scad": "a2ef02f2d48291b1027eb1638d73fa907d1d415b5c27b4eb971e49e2bdbbe278",
+    "src/rail_legacy_8mm.scad": "56b411ad7d0bb0a1a531f8633daa6d06871e47c7f02ed50fd4c7a244b77a19ae",
+    "src/root_joint_check.scad": "7c08f1f050c8d8f30dfe88e34aace7966efaae016952573e3fa83e3934fcccab",
+    "src/scripts/build_hook_plate.py": "f9719d81705b59c94e3b0feaaa702bc33f0b34e68a0c7cbf952b44dfe28eb0cf",
+    "src/scripts/export_parts.sh": "f12947d33a0cf25b411c90583264d2c02e78f9a1506fe3e033fab9cb7e15a969",
+    "src/scripts/inspect_hook_plate.py": "44cb23734ef7cd0296f28e2a397e726996fb470d676eaf31188242390ea31e49",
+    "src/scripts/package_release.py": "21bb1fe80f30e45c03f9d4d2a04c2f3dc1db6a27b7dd509442d2b6a865020fb3",
+    "src/scripts/preview_hook_toolpaths.py": "21f5227e96e48206b41c00540e397e8316adb2dab8c6f80733ae2839e4c62d64",
+    "src/scripts/test_inspect_hook_plate.py": "4dbf58b65f41db57097dad6b180a95937e86dad9f41c67d166d672b14032c5f4",
+    "src/scripts/verify_release.py": "866134b42476d05654d9b635f54d28bc4f1d357e9d4960c7071b0b16ced1e2f3",
+    "src/slider_hook.scad": "97d871ef67f36bc5d5d1f089183385de9260ed425bdafc0e950c977fd34a3406",
+    "src/step.scad": "6155e62b7d9d5219d9f467e96f697fc8eb2ae86baeae1c7c734c75f333e7c28c"
+  },
+  "root_corners": {
+    "corner_-1_-1": {
+      "volume_mm3": 0.06329727621240545,
+      "overlap_mm3": {
+        "base": 0.02351241839289019,
+        "hook_weld": 0.00033948956755582103,
+        "side_cove": 0.009341779393247712,
+        "face_cove": 0.0027914422528930944
+      },
+      "missing_from_final_mm3": 3.5835942054962756e-08
+    },
+    "corner_-1_1": {
+      "volume_mm3": 0.16074011669673544,
+      "overlap_mm3": {
+        "base": 0.01738957563332785,
+        "hook_weld": 0.0003846908898704604,
+        "side_cove": 0.009950839460909609,
+        "face_cove": 0.011425954872205756
+      },
+      "missing_from_final_mm3": 5.168051681963994e-07
+    },
+    "corner_1_-1": {
+      "volume_mm3": 0.06329727973156365,
+      "overlap_mm3": {
+        "base": 0.023512426700943195,
+        "hook_weld": 0.0003394890595899676,
+        "side_cove": 0.009341778686849971,
+        "face_cove": 0.00279134809597463
+      },
+      "missing_from_final_mm3": 6.551331843091176e-08
+    },
+    "corner_1_1": {
+      "volume_mm3": 0.16074009868944258,
+      "overlap_mm3": {
+        "base": 0.017389576138346755,
+        "hook_weld": 0.0003846891305978672,
+        "side_cove": 0.009950836428396458,
+        "face_cove": 0.01142560398900023
+      },
+      "missing_from_final_mm3": 8.231969456542103e-07
+    }
+  },
+  "rail_collision_volume_mm3": {
+    "0": 0.0,
+    "1": 0.0,
+    "5": 0.0,
+    "110": 0.0,
+    "141": 0.0,
+    "282": 0.0
+  },
+  "v3_regression": null,
+  "physical_fit_load_and_slicing": "not tested"
+}

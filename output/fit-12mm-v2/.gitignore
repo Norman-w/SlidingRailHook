@@ -1,0 +1,6 @@
+# Reproducible local intermediates, not user-facing print files.
+**/plate_*.gcode
+**/slice.log
+**/toolpaths-review.svg
+**/rail-diagonal.stl
+**/trials/*/hook.stl

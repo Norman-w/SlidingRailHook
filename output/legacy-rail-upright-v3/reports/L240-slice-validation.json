@@ -1,0 +1,67 @@
+{
+  "slicer": "BambuStudio 01.10.02.76",
+  "source_stl_sha256": "9c409072cdb78dc02f26b9862022827269a8b8b1af7b8d54084bff0a2698fab0",
+  "statistics": {
+    "file": "/Users/norman/CodeXProjects/SlidingRailHook/output/legacy-rail-upright-v3/validation-only/L240/sliced.3mf",
+    "total_g": 7.11,
+    "total_seconds": 7037,
+    "support_g": 0,
+    "feature_g": {
+      "Brim": 0.14346396325150645,
+      "Outer wall": 6.630211997095868
+    },
+    "feature_segment_counts": {
+      "Brim": 1467,
+      "Outer wall": 75602
+    },
+    "warnings": [],
+    "printer": "Bambu Lab X1 Carbon 0.4 nozzle",
+    "filament": [
+      "PETG"
+    ],
+    "layer_mm": "0.2"
+  },
+  "support_enabled_for_test": true,
+  "support_toolpath_segments": 0,
+  "brim_width_mm": 10,
+  "brim_object_gap_mm": 0.1,
+  "brim_toolpath_bounds_mm": [
+    [
+      112.987,
+      116.087,
+      0.2
+    ],
+    [
+      143.013,
+      139.913,
+      0.2
+    ]
+  ],
+  "printable_height_mm_from_installed_profile": 250.0,
+  "headroom_mm": 10.0,
+  "native_reopen": "closed manifold / one part / unscaled",
+  "gui_acceptance": "not_verified",
+  "physical_print": "pending",
+  "sent_to_printer": false,
+  "config_sha256": {
+    "machine": "30d137e2c7c35980a1e99c543f2c4105804c46843736c5c5b5818e2436ba0897",
+    "process": "cd759a4053942f258cc69f1a6e08bf1e66ecc30ca06b56b3b2cf391990a86177",
+    "filament": "97ca6a20e9e3ca382255f6fc8721e1a200533babbee899d80164d43bee2c0846"
+  },
+  "process_overrides": {
+    "brim_width": "10",
+    "default_acceleration": "500",
+    "outer_wall_speed": "25",
+    "initial_layer_speed": "20",
+    "gap_infill_speed": "30",
+    "inner_wall_speed": "35",
+    "internal_solid_infill_speed": "35",
+    "support_on_build_plate_only": "0",
+    "travel_speed": "120",
+    "brim_object_gap": ".1",
+    "outer_wall_acceleration": "500",
+    "layer_height": ".20",
+    "initial_layer_infill_speed": "20",
+    "top_surface_acceleration": "500"
+  }
+}

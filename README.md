@@ -2,7 +2,28 @@
 
 用于柜门/梳妆台的参数化 H 形滑轨与一体式滑块挂钩，使用 OpenSCAD 建模。
 
-![带 XYZ 坐标轴的等轴装配图](output/releases/v0.1.0/renders/assembly-isometric-axes.png)
+![新挂钩 v2：带 XYZ 坐标轴的等轴视图](output/fit-12mm-v2/renders/new-hook-isometric-axes.png)
+
+## 旧挂钩兼容轨道 v3：竖打 STL
+
+沿用旧挂钩的 12/8 mm 翼缘、5.8/3.8 mm 厚度配合，只把轨道长度转到打印 Z 轴；不做特殊拼接、不加永久底盘。
+
+- [200 mm 竖打 STL](output/legacy-rail-upright-v3/delivery/legacy-hooks-rail-front8-back12-L200-upright-v3.stl)
+- [240 mm 竖打 STL](output/legacy-rail-upright-v3/delivery/legacy-hooks-rail-front8-back12-L240-upright-v3.stl)
+- [10 mm Brim、摆放与验证说明](output/legacy-rail-upright-v3/delivery/README.md)
+
+STL 已定向：导入毫米/100%，不要再放平。恒定工字截面没有悬垂支撑需求；底部在切片器加可拆外侧 Brim，先用 200 mm 验证细长件稳定性。下方 v2 的 300 mm 斜放切片包保留为历史方案，不是本次竖打文件。
+
+## 实测配合修正 v2：新挂钩 + 旧挂钩兼容轨道
+
+实物轨道已确认两片翼缘均高 12 mm，外宽 6 mm、内距 4 mm。原 v1 把靠人的翼缘误设为 8 mm，旧挂钩槽因此只有 8.6 mm；**旧版不能安装到这根实物轨道**。
+
+- [新挂钩：一板 12 个，槽净高 12.6 mm](output/fit-12mm-v2/delivery/hook-H12x6-v2-12pcs-PETG-X1C-0p4-0p12.3mf)
+- [复用旧挂钩：300 mm 兼容轨道](output/fit-12mm-v2/delivery/legacy-8mm-rail-300-PETG-X1C-0p4-0p20.3mf)
+- [先试配：单个新挂钩](output/fit-12mm-v2/delivery/hook-H12x6-v2-1pcs-PETG-X1C-0p4-0p12.3mf)、[50 mm 兼容短轨](output/fit-12mm-v2/delivery/legacy-8mm-rail-50-PETG-X1C-0p4-0p20.3mf)
+- [尺寸、打印与验证说明](output/fit-12mm-v2/delivery/README.md)
+
+只交付新挂钩和旧挂钩兼容轨道，不给新挂钩另打印新轨道。按 captive-linear-guide 的真实截面、端部插入和捕获净空核对配合；旧版发布与打印包不覆盖，仍须先试配。
 
 ## v0.1.0：根部四角连续补胶
 
@@ -15,7 +36,7 @@
 - [根部等轴近景](output/releases/v0.1.0/renders/root-isometric-axes.png)
 - [根部背侧近景](output/releases/v0.1.0/renders/root-underside-axes.png)
 
-## 一板 12 个 · PETG 打印项目
+## 旧版一板 12 个 · PETG 项目（8 mm 前翼缘，仅历史参考）
 
 - [下载 X1 Carbon / 0.4 mm / PETG / 0.12 mm 已切片 3MF](output/print-12-v1/hook-12-PETG-X1C-0p4-0p12.3mf)
 - [打印配置、支撑比较与验证边界](output/print-12-v1/README.md)
@@ -33,12 +54,13 @@
 | `end_stop_left.stl` | 左端挡块 |
 | `end_stop_right.stl` | 右端挡块 |
 
-当前文件均在 `output/releases/v0.1.0/stl/`，也作为 Release 附件提供。`output/3d-print/`、`output/versions/` 与 `docs/prototype-history.md` 是历史开发记录，不要把旧 `step.stl` 和 `hook_bent.stl` 当作当前的一体打印件。
+以上为 v0.1.0 历史文件，位于 `output/releases/v0.1.0/stl/`，也作为 Release 附件提供。本次新挂钩与旧挂钩兼容轨道见顶部 v2 交付。`output/3d-print/`、`output/versions/` 与 `docs/prototype-history.md` 是历史开发记录，不要把旧 `step.stl` 和 `hook_bent.stl` 当作当前的一体打印件。
 
 ## 尺寸与装配契约
 
 - 单位：mm。X 沿轨道，Y 向上，Z 为柜门法向；+Z 靠人，挂钩沿 −Y 下垂。
-- 轨道：长 300、高 12、总深 5.8；基板、腹板、前翼缘名义壁厚 1。
+- 当前 v2 参考轨道：长 300，两片翼缘均高 12，外宽 6 / 内距 4，壁厚 1；只用于本次配合验证，不列入打印清单。
+- 复用旧挂钩的专用轨道：长 300，靠墙翼缘高 12、靠人翼缘高 8，外宽 5.8 / 内距 3.8，壁厚 1。
 - 从轨道端部沿 X 插入滑块，随后安装端挡块。不要从前方硬掰卡入。
 - 名义滑动间隙 0.30；补胶保持在外侧根部，不侵入滑动槽。
 - 钩身根宽/尾宽 9/4.5、厚 3、直段 12；在 Y–Z 平面向 +Z 弯曲 240°，中心线半径 5。

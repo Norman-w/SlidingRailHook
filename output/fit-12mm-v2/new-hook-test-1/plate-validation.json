@@ -1,0 +1,142 @@
+{
+  "schema_version": "hook-print-plate-v1",
+  "generated_at_utc": "2026-10-19T03:05:39.159157+00:00",
+  "kind": "sliced-project",
+  "slicer": "Bambu Studio 01.10.02.76",
+  "source": {
+    "source_commit": "f005a48a763e2b5cf04cae3736d5bc4745a2875e",
+    "uncommitted_cad_revision": true,
+    "sources": {
+      "src/assembly.scad": "7d867f45e6033cd24ffde80720576b893861a32ebfce7d93bc3bd07a16354a80",
+      "src/end_stop.scad": "31c68055baa6fc30487cc076f8954bac26a5ed96a8586de0bb3d84b126858419",
+      "src/fit_preview.scad": "099191a90dc587b44fb664358d2e5a3b7d7f5e2eb5ae64ad2aeb790a30169549",
+      "src/hook.scad": "aad0fc2bae92aa0020d33fbfe4aea0da51092c6ed1f412dae722b9b10114707a",
+      "src/hook_bent.scad": "e5bc6c82d8c30eea0803c7177e5a52d19735da50ac0dfa47a7798eb9d0802372",
+      "src/hook_trapezoid.scad": "be4d5e86fe35356e26b2fcf130358701e83d34c8e8c485fda9e1506f5502c63a",
+      "src/parameters.scad": "c0ef0cfaecc02597158f4d7258ffcb43a847ea7c958173a5fb1e5ea7f088952e",
+      "src/rail.scad": "a2ef02f2d48291b1027eb1638d73fa907d1d415b5c27b4eb971e49e2bdbbe278",
+      "src/rail_legacy_8mm.scad": "56b411ad7d0bb0a1a531f8633daa6d06871e47c7f02ed50fd4c7a244b77a19ae",
+      "src/root_joint_check.scad": "7c08f1f050c8d8f30dfe88e34aace7966efaae016952573e3fa83e3934fcccab",
+      "src/slider_hook.scad": "97d871ef67f36bc5d5d1f089183385de9260ed425bdafc0e950c977fd34a3406",
+      "src/step.scad": "6155e62b7d9d5219d9f467e96f697fc8eb2ae86baeae1c7c734c75f333e7c28c"
+    },
+    "stl_sha256": "aee2c995a07225ab71ccd4d5c217b98729cf1453ae9f9b4f36e7bab0bde7973a"
+  },
+  "part_id": "slider_hook",
+  "source_entry": "src/slider_hook.scad (top-level union)",
+  "source_modules": [
+    "step_geometry",
+    "hook_bent_geometry"
+  ],
+  "material": "PETG",
+  "plate_count": 1,
+  "object_count": 1,
+  "units": "mm",
+  "fit_contract": {
+    "rail_back_height_mm": 12,
+    "rail_front_height_mm": 12,
+    "rail_outer_depth_mm": 6,
+    "rail_inner_separation_mm": 4,
+    "rail_wing_wall_mm": 1,
+    "rail_web_wall_mm": 1,
+    "cavity_y_mm": [
+      -0.3,
+      12.3
+    ],
+    "cavity_contact_z_mm": [
+      4.15,
+      6.31
+    ],
+    "hook_base_y_mm": -1.3,
+    "clearance_per_side_mm": 0.3,
+    "carriage_side_wall_mm": 1
+  },
+  "numeric_mesh_normalization": {
+    "input": "trials/side/hook.stl",
+    "operation": "remove exactly zero-area float32-collapsed faces only",
+    "removed_faces": 8,
+    "remaining_faces": 14396,
+    "volume_change_mm3": 2.2737367544323206e-13,
+    "watertight": true,
+    "degenerate_faces": 0,
+    "cad_geometry_changed": false
+  },
+  "bed_mm": [
+    256,
+    256
+  ],
+  "copies": [
+    {
+      "copy": 1,
+      "bounds_mm": [
+        [
+          121.20260763,
+          111.6043472,
+          0.0
+        ],
+        [
+          134.79739237,
+          144.3956528,
+          17.9965763
+        ]
+      ],
+      "mesh_max_deviation_mm": 2.1738811955342564e-06,
+      "unit_scale": true
+    }
+  ],
+  "statistics": {
+    "file": "/Users/norman/CodeXProjects/SlidingRailHook/output/fit-12mm-v2/new-hook-test-1/hook-H12x6-v2-1pcs-PETG-X1C-0p4-0p12.3mf",
+    "total_g": 1.99,
+    "total_seconds": 1825,
+    "support_g": 0.23834911929857688,
+    "feature_g": {
+      "Support": 0.18561688674550011,
+      "Brim": 0.021184980248049635,
+      "Outer wall": 0.8869610079175839,
+      "Support interface": 0.05273223255307678,
+      "Inner wall": 0.46134805606506163,
+      "Overhang wall": 0.0072186720729444055,
+      "Bridge": 0.00024055825356395278,
+      "Internal solid infill": 0.029424352446023223,
+      "Sparse infill": 0.0047040670094389715,
+      "Top surface": 0.005559873997607253,
+      "Gap infill": 0.00036457939762438705
+    },
+    "feature_segment_counts": {
+      "Support": 4695,
+      "Brim": 263,
+      "Outer wall": 23158,
+      "Support interface": 1087,
+      "Inner wall": 15978,
+      "Overhang wall": 333,
+      "Bridge": 9,
+      "Internal solid infill": 1030,
+      "Sparse infill": 345,
+      "Top surface": 71,
+      "Gap infill": 73
+    },
+    "warnings": [],
+    "printer": "Bambu Lab X1 Carbon 0.4 nozzle",
+    "filament": [
+      "PETG"
+    ],
+    "layer_mm": "0.12"
+  },
+  "support_contact_check": {
+    "ordinary_and_interface_samples": 17346,
+    "near_surface_samples": 1875,
+    "sliding_cavity_samples": 0,
+    "hook_forward_face_samples": 0,
+    "distance_threshold_mm": 0.55,
+    "method": "all support toolpaths including G2/G3 arcs tessellated at <=0.25 mm / 5 degrees; endpoints and midpoints; nearest downward mesh faces"
+  },
+  "file_sha256": "3f3ab9e33fe63100ec020bd8be36b8d88e1dff2ccbe33ba6831bafa2a19341a4",
+  "target_slicer_reopen": {
+    "method": "Bambu Studio --info",
+    "closed_manifold_single_parts": 1,
+    "passed": true
+  },
+  "native_gui_preview": "not verified in this build; independent toolpath checks only",
+  "sent_to_printer": false,
+  "physical_print_and_load_test": "pending"
+}

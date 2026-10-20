@@ -9,7 +9,9 @@ from inspect_hook_plate import instances, statistics
 
 
 def preview(folder):
-    source=folder/'hook-12-PETG-X1C-0p4-0p12.3mf'
+    candidates=list(folder.glob('*-PETG-X1C-0p4-0p12.3mf'))
+    assert len(candidates)==1,candidates
+    source=candidates[0]
     _,settings,roles=statistics(source)
     meshes=instances(source)
     bounds=np.array([m.bounds for m,_ in meshes])

@@ -1,0 +1,329 @@
+{
+  "schema_version": "hook-print-plate-v1",
+  "generated_at_utc": "2026-10-20T02:54:44.548730+00:00",
+  "kind": "sliced-project",
+  "slicer": "Bambu Studio 01.10.02.76",
+  "source": {
+    "source_commit": "f005a48a763e2b5cf04cae3736d5bc4745a2875e",
+    "uncommitted_cad_revision": true,
+    "sources": {
+      "src/assembly.scad": "7d867f45e6033cd24ffde80720576b893861a32ebfce7d93bc3bd07a16354a80",
+      "src/end_stop.scad": "31c68055baa6fc30487cc076f8954bac26a5ed96a8586de0bb3d84b126858419",
+      "src/fit_preview.scad": "099191a90dc587b44fb664358d2e5a3b7d7f5e2eb5ae64ad2aeb790a30169549",
+      "src/hook.scad": "aad0fc2bae92aa0020d33fbfe4aea0da51092c6ed1f412dae722b9b10114707a",
+      "src/hook_bent.scad": "e5bc6c82d8c30eea0803c7177e5a52d19735da50ac0dfa47a7798eb9d0802372",
+      "src/hook_trapezoid.scad": "be4d5e86fe35356e26b2fcf130358701e83d34c8e8c485fda9e1506f5502c63a",
+      "src/parameters.scad": "c0ef0cfaecc02597158f4d7258ffcb43a847ea7c958173a5fb1e5ea7f088952e",
+      "src/rail.scad": "a2ef02f2d48291b1027eb1638d73fa907d1d415b5c27b4eb971e49e2bdbbe278",
+      "src/rail_legacy_8mm.scad": "56b411ad7d0bb0a1a531f8633daa6d06871e47c7f02ed50fd4c7a244b77a19ae",
+      "src/root_joint_check.scad": "7c08f1f050c8d8f30dfe88e34aace7966efaae016952573e3fa83e3934fcccab",
+      "src/slider_hook.scad": "97d871ef67f36bc5d5d1f089183385de9260ed425bdafc0e950c977fd34a3406",
+      "src/step.scad": "6155e62b7d9d5219d9f467e96f697fc8eb2ae86baeae1c7c734c75f333e7c28c"
+    },
+    "stl_sha256": "aee2c995a07225ab71ccd4d5c217b98729cf1453ae9f9b4f36e7bab0bde7973a"
+  },
+  "part_id": "slider_hook",
+  "source_entry": "src/slider_hook.scad (top-level union)",
+  "source_modules": [
+    "step_geometry",
+    "hook_bent_geometry"
+  ],
+  "material": "PETG",
+  "plate_count": 1,
+  "object_count": 12,
+  "units": "mm",
+  "fit_contract": {
+    "rail_back_height_mm": 12,
+    "rail_front_height_mm": 12,
+    "rail_outer_depth_mm": 6,
+    "rail_inner_separation_mm": 4,
+    "rail_wing_wall_mm": 1,
+    "rail_web_wall_mm": 1,
+    "cavity_y_mm": [
+      -0.3,
+      12.3
+    ],
+    "cavity_contact_z_mm": [
+      4.15,
+      6.31
+    ],
+    "hook_base_y_mm": -1.3,
+    "clearance_per_side_mm": 0.3,
+    "carriage_side_wall_mm": 1
+  },
+  "numeric_mesh_normalization": {
+    "input": "trials/side/hook.stl",
+    "operation": "remove exactly zero-area float32-collapsed faces only",
+    "removed_faces": 8,
+    "remaining_faces": 14396,
+    "volume_change_mm3": 2.2737367544323206e-13,
+    "watertight": true,
+    "degenerate_faces": 0,
+    "cad_geometry_changed": false
+  },
+  "bed_mm": [
+    256,
+    256
+  ],
+  "copies": [
+    {
+      "copy": 1,
+      "bounds_mm": [
+        [
+          82.81043053,
+          66.81304169999999,
+          0.0
+        ],
+        [
+          96.40521527,
+          99.6043473,
+          17.9965763
+        ]
+      ],
+      "mesh_max_deviation_mm": 2.2117656936040163e-06,
+      "unit_scale": true
+    },
+    {
+      "copy": 2,
+      "bounds_mm": [
+        [
+          159.59478463,
+          156.3956532,
+          0.0
+        ],
+        [
+          173.18956937000002,
+          189.18695879999999,
+          17.9965763
+        ]
+      ],
+      "mesh_max_deviation_mm": 2.5961943127628526e-06,
+      "unit_scale": true
+    },
+    {
+      "copy": 3,
+      "bounds_mm": [
+        [
+          133.99999963,
+          156.3956532,
+          0.0
+        ],
+        [
+          147.59478437,
+          189.18695879999999,
+          17.9965763
+        ]
+      ],
+      "mesh_max_deviation_mm": 2.620475836822763e-06,
+      "unit_scale": true
+    },
+    {
+      "copy": 4,
+      "bounds_mm": [
+        [
+          108.40521463,
+          156.3956532,
+          0.0
+        ],
+        [
+          121.99999937,
+          189.18695879999999,
+          17.9965763
+        ]
+      ],
+      "mesh_max_deviation_mm": 2.670634076293922e-06,
+      "unit_scale": true
+    },
+    {
+      "copy": 5,
+      "bounds_mm": [
+        [
+          82.81043053,
+          156.3956532,
+          0.0
+        ],
+        [
+          96.40521527,
+          189.18695879999999,
+          17.9965763
+        ]
+      ],
+      "mesh_max_deviation_mm": 2.593917756213543e-06,
+      "unit_scale": true
+    },
+    {
+      "copy": 6,
+      "bounds_mm": [
+        [
+          159.59478463,
+          111.6043472,
+          0.0
+        ],
+        [
+          173.18956937000002,
+          144.3956528,
+          17.9965763
+        ]
+      ],
+      "mesh_max_deviation_mm": 2.1765985637138692e-06,
+      "unit_scale": true
+    },
+    {
+      "copy": 7,
+      "bounds_mm": [
+        [
+          133.99999963,
+          111.6043472,
+          0.0
+        ],
+        [
+          147.59478437,
+          144.3956528,
+          17.9965763
+        ]
+      ],
+      "mesh_max_deviation_mm": 2.2055044795490804e-06,
+      "unit_scale": true
+    },
+    {
+      "copy": 8,
+      "bounds_mm": [
+        [
+          108.40521463,
+          111.6043472,
+          0.0
+        ],
+        [
+          121.99999937,
+          144.3956528,
+          17.9965763
+        ]
+      ],
+      "mesh_max_deviation_mm": 2.2648714681856425e-06,
+      "unit_scale": true
+    },
+    {
+      "copy": 9,
+      "bounds_mm": [
+        [
+          82.81043053,
+          111.6043472,
+          0.0
+        ],
+        [
+          96.40521527,
+          144.3956528,
+          17.9965763
+        ]
+      ],
+      "mesh_max_deviation_mm": 2.1738826380324676e-06,
+      "unit_scale": true
+    },
+    {
+      "copy": 10,
+      "bounds_mm": [
+        [
+          159.59478463,
+          66.81304169999999,
+          0.0
+        ],
+        [
+          173.18956937000002,
+          99.6043473,
+          17.9965763
+        ]
+      ],
+      "mesh_max_deviation_mm": 2.2144351575573247e-06,
+      "unit_scale": true
+    },
+    {
+      "copy": 11,
+      "bounds_mm": [
+        [
+          133.99999963,
+          66.81304169999999,
+          0.0
+        ],
+        [
+          147.59478437,
+          99.6043473,
+          17.9965763
+        ]
+      ],
+      "mesh_max_deviation_mm": 2.2428534880316443e-06,
+      "unit_scale": true
+    },
+    {
+      "copy": 12,
+      "bounds_mm": [
+        [
+          108.40521463,
+          66.81304169999999,
+          0.0
+        ],
+        [
+          121.99999937,
+          99.6043473,
+          17.9965763
+        ]
+      ],
+      "mesh_max_deviation_mm": 2.301257162262845e-06,
+      "unit_scale": true
+    }
+  ],
+  "statistics": {
+    "file": "output/fit-12mm-v2/new-hooks-12/hook-H12x6-v2-12pcs-PETG-X1C-0p4-0p12.3mf",
+    "total_g": 20.2,
+    "total_seconds": 10418,
+    "support_g": 2.8601894315828185,
+    "feature_g": {
+      "Support": 2.227402640945847,
+      "Brim": 0.25421976297658355,
+      "Outer wall": 10.643530964770576,
+      "Support interface": 0.6327867906369714,
+      "Inner wall": 5.536177222633058,
+      "Overhang wall": 0.08662406487536586,
+      "Bridge": 0.002886699042763266,
+      "Internal solid infill": 0.353092229352088,
+      "Sparse infill": 0.05644880411330516,
+      "Top surface": 0.06671848797116618,
+      "Gap infill": 0.004374952771446804
+    },
+    "feature_segment_counts": {
+      "Support": 56340,
+      "Brim": 3156,
+      "Outer wall": 277837,
+      "Support interface": 13042,
+      "Inner wall": 191739,
+      "Overhang wall": 3996,
+      "Bridge": 108,
+      "Internal solid infill": 12360,
+      "Sparse infill": 4140,
+      "Top surface": 852,
+      "Gap infill": 876
+    },
+    "warnings": [],
+    "printer": "Bambu Lab X1 Carbon 0.4 nozzle",
+    "filament": [
+      "PETG"
+    ],
+    "layer_mm": "0.12"
+  },
+  "support_contact_check": {
+    "ordinary_and_interface_samples": 208146,
+    "near_surface_samples": 22483,
+    "sliding_cavity_samples": 0,
+    "hook_forward_face_samples": 0,
+    "distance_threshold_mm": 0.55,
+    "method": "all support toolpaths including G2/G3 arcs tessellated at <=0.25 mm / 5 degrees; endpoints and midpoints; nearest downward mesh faces"
+  },
+  "file_sha256": "e8f89f7c9d8c54c836d6ab2ab4e1d271049ce8881c12782f2158339e6110eb68",
+  "target_slicer_reopen": {
+    "method": "Bambu Studio --info",
+    "closed_manifold_single_parts": 12,
+    "passed": true
+  },
+  "native_gui_preview": "not verified in this build; independent toolpath checks only",
+  "sent_to_printer": false,
+  "physical_print_and_load_test": "pending"
+}

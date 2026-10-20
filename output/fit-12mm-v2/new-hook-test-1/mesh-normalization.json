@@ -1,0 +1,10 @@
+{
+  "input": "trials/side/hook.stl",
+  "operation": "remove exactly zero-area float32-collapsed faces only",
+  "removed_faces": 8,
+  "remaining_faces": 14396,
+  "volume_change_mm3": 2.2737367544323206e-13,
+  "watertight": true,
+  "degenerate_faces": 0,
+  "cad_geometry_changed": false
+}

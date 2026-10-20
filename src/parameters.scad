@@ -10,14 +10,15 @@ $fs = 0.25;
 rail_length = 300;
 rail_height = 12;
 wall_thickness = 1;          // Nominal base, web and person-side flange wall.
-rail_depth_target = 5.8;     // Z extent; intentionally below the 6 mm target.
+rail_depth_target = 6.0;     // Measured H profile: 6 outside, 4 between wings.
+rail_front_height = 12;     // Both wings are 12 mm, not the old 8 mm front wing.
 join_overlap = 0.02;         // CSG robustness only; not a nominal wall thickness.
 
 // Rail cross-section: mounting base + central web + person-side flange.
 rail_web_y0 = (rail_height - wall_thickness) / 2;
 rail_web_y1 = rail_web_y0 + wall_thickness;
-rail_flange_y0 = 2;
-rail_flange_y1 = rail_height - 2;
+rail_flange_y0 = (rail_height - rail_front_height) / 2;
+rail_flange_y1 = rail_flange_y0 + rail_front_height;
 rail_flange_z0 = rail_depth_target - wall_thickness;
 rail_flange_z1 = rail_depth_target;
 rail_web_z0 = wall_thickness - join_overlap;
@@ -26,10 +27,11 @@ rail_web_z1 = rail_flange_z0 + join_overlap;
 // Sliding hook carriage.
 slide_clearance = 0.30;      // Radial clearance around the flange/web envelope.
 hook_carriage_length = 18;
-hook_outer_y0 = rail_flange_y0 - wall_thickness;
-hook_outer_y1 = rail_flange_y1 + wall_thickness;
+hook_carriage_wall = 1.0;
+hook_outer_y0 = rail_flange_y0 - slide_clearance - hook_carriage_wall;
+hook_outer_y1 = rail_flange_y1 + slide_clearance + hook_carriage_wall;
 hook_outer_z0 = wall_thickness + 0.10;
-hook_outer_z1 = rail_depth_target + wall_thickness + 0.10;
+hook_outer_z1 = rail_depth_target + slide_clearance + hook_carriage_wall;
 hook_inner_y0 = rail_flange_y0 - slide_clearance;
 hook_inner_y1 = rail_flange_y1 + slide_clearance;
 hook_inner_z0 = hook_outer_z0 - join_overlap;
@@ -243,10 +245,15 @@ show_assembly_end_stops = true;
 
 assert(rail_length > 0);
 assert(rail_height > 2 * wall_thickness);
-assert(rail_depth_target < 6);
+assert(rail_depth_target > 2 * wall_thickness);
+assert(rail_front_height == 12);
+assert(abs(rail_depth_target - 2 * wall_thickness - 4) < 0.0001);
 assert(slide_clearance > 0);
 assert(hook_inner_y0 > hook_outer_y0);
 assert(hook_inner_y1 < hook_outer_y1);
+assert(abs(hook_inner_y1 - hook_inner_y0 - 12.6) < 0.0001);
+assert(abs(hook_inner_y0 - hook_outer_y0 - hook_carriage_wall) < 0.0001);
+assert(abs(hook_outer_y1 - hook_inner_y1 - hook_carriage_wall) < 0.0001);
 assert(hook_carriage_corner_radius > 0);
 assert(hook_carriage_corner_radius < min(hook_outer_y1 - hook_outer_y0,
                                          hook_outer_z1 - hook_outer_z0) / 2);
@@ -320,7 +327,7 @@ assert(hook_root_bridge_width_x < hook_carriage_length);
 assert(hook_root_bridge_edge_radius > 0);
 assert(hook_root_bridge_edge_radius < 0.5);
 assert(hook_fairing_root_width_x < hook_carriage_length);
-assert(hook_fairing_root_center_y + hook_root_radius <= hook_outer_y0 + join_overlap);
+assert(hook_fairing_root_center_y + hook_root_radius <= hook_outer_y0 + join_overlap + 0.000001);
 assert(hook_root_center_z + hook_root_radius <= rail_flange_z0 - hook_root_transition_clearance);
 assert(hook_fairing_root_center_y - hook_root_radius < hook_root_bridge_y1);
 assert(hook_fairing_root_center_y + hook_root_radius > hook_root_bridge_y0);

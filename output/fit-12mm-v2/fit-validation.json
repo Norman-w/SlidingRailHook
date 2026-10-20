@@ -1,0 +1,86 @@
+{
+  "units": "mm",
+  "new_fit": {
+    "rail_back_height_mm": 12,
+    "rail_front_height_mm": 12,
+    "rail_outer_depth_mm": 6,
+    "rail_inner_separation_mm": 4,
+    "rail_wing_wall_mm": 1,
+    "rail_web_wall_mm": 1,
+    "cavity_y_mm": [
+      -0.3,
+      12.3
+    ],
+    "cavity_contact_z_mm": [
+      4.15,
+      6.31
+    ],
+    "hook_base_y_mm": -1.3,
+    "clearance_per_side_mm": 0.3,
+    "carriage_side_wall_mm": 1
+  },
+  "new_cavity_ray_y_mm": [
+    -1.29487,
+    -0.3,
+    12.3,
+    13.29487
+  ],
+  "old_cavity_ray_y_mm": [
+    1.00513,
+    1.7,
+    10.3,
+    10.99487
+  ],
+  "new_rail_ray_z_mm": [
+    0.0,
+    1.0,
+    5.0,
+    6.0
+  ],
+  "legacy_rail_ray_z_mm": [
+    0.0,
+    1.0,
+    4.8,
+    5.8
+  ],
+  "new_hook_clear_height_mm": 12.600000000000001,
+  "old_hook_clear_height_mm": 8.600000000000001,
+  "new_hook_new_rail_intersection_mm3": {
+    "-18": 0.0,
+    "-12": 0.0,
+    "-1": 0.0,
+    "0": 0.0,
+    "1": 0.0,
+    "50": 0.0,
+    "110": 0.0,
+    "141": 0.0,
+    "282": 0.0,
+    "294": 0.0,
+    "300": 0.0
+  },
+  "old_hook_legacy_rail_intersection_mm3": {
+    "-18": 0.0,
+    "-12": 0.0,
+    "-1": 0.0,
+    "0": 0.0,
+    "1": 0.0,
+    "50": 0.0,
+    "110": 0.0,
+    "141": 0.0,
+    "282": 0.0,
+    "294": 0.0,
+    "300": 0.0
+  },
+  "old_hook_new_rail_negative_control_mm3": 25.99034010835815,
+  "unchanged_free_hook_shape_difference_mm3": 7.1403069287917e-05,
+  "old_hook_sha256": "d9174856fd90c59cb9a61319672b1308474add2d5c24631091eef6bb91579e7d",
+  "legacy_rail": {
+    "back_height_mm": 12,
+    "front_height_mm": 8,
+    "outside_mm": 5.8,
+    "inside_mm": 3.8,
+    "wall_mm": 1,
+    "web_mm": 1
+  },
+  "physical_fit_and_load_test": "pending"
+}

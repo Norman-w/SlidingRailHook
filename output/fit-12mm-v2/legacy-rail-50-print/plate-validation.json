@@ -1,0 +1,79 @@
+{
+  "kind": "sliced-project",
+  "part_id": "legacy_rail_8mm_front",
+  "count": 1,
+  "length_mm": 50,
+  "print_rotation_x_deg": 90,
+  "print_rotation_z_deg": -45,
+  "bounds_mm": [
+    [
+      107.99778789999999,
+      107.99778789999999,
+      0.0
+    ],
+    [
+      147.4543461,
+      147.4543461,
+      12.0
+    ]
+  ],
+  "no_scaling": true,
+  "statistics": {
+    "file": "/Users/norman/CodeXProjects/SlidingRailHook/output/fit-12mm-v2/legacy-rail-50-print/legacy-8mm-rail-50-PETG-X1C-0p4-0p20.3mf",
+    "total_g": 2.22,
+    "total_seconds": 1254,
+    "support_g": 0.45692108161665956,
+    "feature_g": {
+      "Support": 0.26868267502829896,
+      "Brim": 0.03605316040768914,
+      "Outer wall": 1.074975412769605,
+      "Support interface": 0.1882384065883606,
+      "Overhang wall": 0.013484977838416883,
+      "Inner wall": 0.0892987060900202,
+      "Bridge": 0.0402497487801152,
+      "Internal solid infill": 0.11604539316046951,
+      "Top surface": 0.05514694866558165,
+      "Gap infill": 0.0002071092011633519
+    },
+    "feature_segment_counts": {
+      "Support": 667,
+      "Brim": 82,
+      "Outer wall": 494,
+      "Support interface": 638,
+      "Overhang wall": 14,
+      "Inner wall": 72,
+      "Bridge": 17,
+      "Internal solid infill": 63,
+      "Top surface": 130,
+      "Gap infill": 2
+    },
+    "warnings": [],
+    "printer": "Bambu Lab X1 Carbon 0.4 nozzle",
+    "filament": [
+      "PETG"
+    ],
+    "layer_mm": "0.2"
+  },
+  "sha256": "ab5df4a67bfaefe53f3aeaace10d16585ccf922225f2979eb6a6b530db2553b5",
+  "support_contact": "lower narrow edge of front wing; functional Z faces printed vertically; clean edge before test",
+  "physical_fit_and_load_test": "pending",
+  "sent_to_printer": false,
+  "support_contact_check": {
+    "sample_count": 3915,
+    "near_downward_surface_samples": 762,
+    "functional_z_face_samples": 0,
+    "contact_original_bounds_mm": [
+      [
+        0.18833015494520922,
+        1.9999999999999998,
+        1.5884080350620877
+      ],
+      [
+        49.811669845054766,
+        5.5,
+        5.611845620013611
+      ]
+    ],
+    "method": "actual Support + Support interface G-code including arcs; endpoints and midpoints; .55-mm surface threshold"
+  }
+}

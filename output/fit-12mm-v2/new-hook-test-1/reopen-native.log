@@ -1,0 +1,15 @@
+[2026-10-19 11:05:34.664559] [0x00000001fa7be180] [trace]   Initializing StaticPrintConfigs
+[hook-H12x6-v2-1pcs-PETG-X1C-0p4-0p12.3mf]
+size_x = 13.594785
+size_y = 32.791306
+size_z = 17.996576
+min_x = -6.797392
+min_y = -16.395653
+min_z = -8.998288
+max_x = 6.797392
+max_y = 16.395653
+max_z = 8.998288
+number_of_facets = 14396
+manifold = yes
+number_of_parts =  1
+volume = 1236.501099

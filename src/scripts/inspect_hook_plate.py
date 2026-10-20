@@ -158,17 +158,25 @@ def comparison(folder):
 
 def verify_plate(folder):
     from scipy.spatial import cKDTree
-    path=folder/'hook-12-PETG-X1C-0p4-0p12.3mf'
+    candidates=list(folder.glob('*-PETG-X1C-0p4-0p12.3mf'))
+    assert len(candidates)==1,candidates
+    path=candidates[0]
     stats,settings,segments=statistics(path)
     actual=instances(path)
     placement=json.loads((folder/'plate-placement.json').read_text())
+    count=placement['count']
+    assert count in (1,12)
+    fit_path=folder/'fit-contract.json'
+    fit=json.loads(fit_path.read_text()) if fit_path.exists() else {
+        'cavity_y_mm':[1.7,10.3], 'cavity_contact_z_mm':[3.65,6.2],
+        'hook_base_y_mm':1.0}
     pose=json.loads((folder/'trials/side/pose.json').read_text())
     identity=json.loads((folder/'source/identity.json').read_text())
     source=trimesh.load_mesh(folder/'source/slider_hook.stl')
     project=Path(__file__).resolve().parents[2]
     assert all(hashlib.sha256((project/p).read_bytes()).hexdigest()==h
                for p,h in identity['sources'].items())
-    assert len(actual)==placement['count']==12
+    assert len(actual)==count
     assert settings['printer_settings_id']=='Bambu Lab X1 Carbon 0.4 nozzle'
     assert settings['filament_type']==['PETG'] and settings['nozzle_diameter']==['0.4']
     assert settings['layer_height']=='0.12' and settings['support_style']=='snug'
@@ -195,7 +203,7 @@ def verify_plate(folder):
         all_bounds.append(mesh.bounds)
         copies.append({'copy':index+1,'bounds_mm':mesh.bounds.tolist(),
                        'mesh_max_deviation_mm':deviation,'unit_scale':True})
-    assert len(set(ids))==12
+    assert len(set(ids))==count
     for i,a in enumerate(all_bounds):
         for b in all_bounds[:i]:
             assert np.any(a[0,:2]>b[1,:2]+6) or np.any(b[0,:2]>a[1,:2]+6)
@@ -205,7 +213,7 @@ def verify_plate(folder):
         # 1.10 CLI omits model_instance tags. Count the actual build tree above
         # and assign its bounds to the sole physical plate, not an optional UI
         # cache. Every core object must also have native mesh metadata.
-        assert len(model_settings.findall('object'))==12
+        assert len(model_settings.findall('object'))==count
         for mesh_stat in model_settings.findall('object/part/mesh_stat'):
             assert all(mesh_stat.get(k)=='0' for k in
                        ('edges_fixed','degenerate_facets','facets_removed',
@@ -230,14 +238,16 @@ def verify_plate(folder):
         original=trimesh.transform_points(near[keep],np.linalg.inv(transform))
         normals=mesh.face_normals[tri[keep]]@transform[:3,:3]
         contacts+=len(original)
-        cavity+=int(np.count_nonzero((original[:,1]>1.7)&
-                                    (original[:,2]>3.65)&(original[:,2]<6.2)))
-        front+=int(np.count_nonzero((original[:,1]<1)&(normals[:,2]>.7)))
+        cavity+=int(np.count_nonzero((original[:,1]>fit['cavity_y_mm'][0])&
+                                    (original[:,1]<fit['cavity_y_mm'][1])&
+                                    (original[:,2]>fit['cavity_contact_z_mm'][0])&
+                                    (original[:,2]<fit['cavity_contact_z_mm'][1])))
+        front+=int(np.count_nonzero((original[:,1]<fit['hook_base_y_mm'])&(normals[:,2]>.7)))
     assert cavity==0, ('support on sliding faces',cavity)
     assert front==0, ('support on hook forward face',front)
     reopened=(folder/'reopen-native.log').read_text()
-    assert len(re.findall(r'^manifold = yes$',reopened,re.M))==12
-    assert len(re.findall(r'^number_of_parts =  1$',reopened,re.M))==12
+    assert len(re.findall(r'^manifold = yes$',reopened,re.M))==count
+    assert len(re.findall(r'^number_of_parts =  1$',reopened,re.M))==count
     assert 'manifold = no' not in reopened and 'open_edges' not in reopened
     result={'schema_version':'hook-print-plate-v1',
             'generated_at_utc':datetime.now(timezone.utc).isoformat(),
@@ -245,7 +255,8 @@ def verify_plate(folder):
             'source':identity,'part_id':'slider_hook',
             'source_entry':'src/slider_hook.scad (top-level union)',
             'source_modules':['step_geometry','hook_bent_geometry'],
-            'material':'PETG','plate_count':1,'object_count':12,'units':'mm',
+            'material':'PETG','plate_count':1,'object_count':count,'units':'mm',
+            'fit_contract':fit,
             'numeric_mesh_normalization':json.loads((folder/'mesh-normalization.json').read_text()),
             'bed_mm':[256,256],'copies':copies,'statistics':stats,
             'support_contact_check':{'ordinary_and_interface_samples':len(points),
@@ -254,11 +265,11 @@ def verify_plate(folder):
                 'method':'all support toolpaths including G2/G3 arcs tessellated at <=0.25 mm / 5 degrees; endpoints and midpoints; nearest downward mesh faces'},
             'file_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),
             'target_slicer_reopen':{'method':'Bambu Studio --info',
-                'closed_manifold_single_parts':12,'passed':True},
-            'native_gui_preview':'pending: computer-use window reads timed out; no GUI preview acceptance claimed',
+                'closed_manifold_single_parts':count,'passed':True},
+            'native_gui_preview':'not verified in this build; independent toolpath checks only',
             'sent_to_printer':False,'physical_print_and_load_test':'pending'}
     (folder/'plate-validation.json').write_text(json.dumps(result,indent=2)+'\n')
-    print('PASS: native sliced 3MF; one plate, 12 unchanged rigid copies;')
+    print(f'PASS: native sliced 3MF; one plate, {count} unchanged rigid copies;')
     print('no scaling, overlap, bed overflow or protected-face support contacts.')
     print(f"Estimated {stats['total_g']} g, {stats['total_seconds']} seconds; "
           f"support {stats['support_g']:.3f} g.")

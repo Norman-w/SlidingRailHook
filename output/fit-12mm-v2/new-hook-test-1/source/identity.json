@@ -1,0 +1,19 @@
+{
+  "source_commit": "f005a48a763e2b5cf04cae3736d5bc4745a2875e",
+  "uncommitted_cad_revision": true,
+  "sources": {
+    "src/assembly.scad": "7d867f45e6033cd24ffde80720576b893861a32ebfce7d93bc3bd07a16354a80",
+    "src/end_stop.scad": "31c68055baa6fc30487cc076f8954bac26a5ed96a8586de0bb3d84b126858419",
+    "src/fit_preview.scad": "099191a90dc587b44fb664358d2e5a3b7d7f5e2eb5ae64ad2aeb790a30169549",
+    "src/hook.scad": "aad0fc2bae92aa0020d33fbfe4aea0da51092c6ed1f412dae722b9b10114707a",
+    "src/hook_bent.scad": "e5bc6c82d8c30eea0803c7177e5a52d19735da50ac0dfa47a7798eb9d0802372",
+    "src/hook_trapezoid.scad": "be4d5e86fe35356e26b2fcf130358701e83d34c8e8c485fda9e1506f5502c63a",
+    "src/parameters.scad": "c0ef0cfaecc02597158f4d7258ffcb43a847ea7c958173a5fb1e5ea7f088952e",
+    "src/rail.scad": "a2ef02f2d48291b1027eb1638d73fa907d1d415b5c27b4eb971e49e2bdbbe278",
+    "src/rail_legacy_8mm.scad": "56b411ad7d0bb0a1a531f8633daa6d06871e47c7f02ed50fd4c7a244b77a19ae",
+    "src/root_joint_check.scad": "7c08f1f050c8d8f30dfe88e34aace7966efaae016952573e3fa83e3934fcccab",
+    "src/slider_hook.scad": "97d871ef67f36bc5d5d1f089183385de9260ed425bdafc0e950c977fd34a3406",
+    "src/step.scad": "6155e62b7d9d5219d9f467e96f697fc8eb2ae86baeae1c7c734c75f333e7c28c"
+  },
+  "stl_sha256": "aee2c995a07225ab71ccd4d5c217b98729cf1453ae9f9b4f36e7bab0bde7973a"
+}

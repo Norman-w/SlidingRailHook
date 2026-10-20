@@ -1,0 +1,54 @@
+{
+  "kind": "two-part-families-print-package",
+  "units": "mm",
+  "print_families": [
+    "new_hook_H12x6",
+    "rail_for_already_printed_v1_hooks"
+  ],
+  "no_new_12mm_rail_in_print_list": true,
+  "sent_to_printer": false,
+  "files": [
+    {
+      "file": "new-hook-H12x6-clear12p6-v2.stl",
+      "source": "stl/slider_hook.stl",
+      "sha256": "aee2c995a07225ab71ccd4d5c217b98729cf1453ae9f9b4f36e7bab0bde7973a",
+      "kind": "mesh"
+    },
+    {
+      "file": "legacy-hooks-rail-front8-back12-L300-v2.stl",
+      "source": "legacy-rail-8mm-front-300.stl",
+      "sha256": "20701d8e9a065025a1df48535d5ed87307e0425352a84e13dee62f2fa6b0c084",
+      "kind": "mesh"
+    },
+    {
+      "file": "legacy-hooks-rail-front8-back12-L50-test-v2.stl",
+      "source": "legacy-rail-8mm-front-50.stl",
+      "sha256": "e0943608ee772df95bb542e11e2d1674c5509e94ba03f034eb6bb3bcd7b34295",
+      "kind": "mesh"
+    },
+    {
+      "file": "hook-H12x6-v2-12pcs-PETG-X1C-0p4-0p12.3mf",
+      "source": "new-hooks-12/hook-H12x6-v2-12pcs-PETG-X1C-0p4-0p12.3mf",
+      "sha256": "e8f89f7c9d8c54c836d6ab2ab4e1d271049ce8881c12782f2158339e6110eb68",
+      "kind": "sliced-project"
+    },
+    {
+      "file": "hook-H12x6-v2-1pcs-PETG-X1C-0p4-0p12.3mf",
+      "source": "new-hook-test-1/hook-H12x6-v2-1pcs-PETG-X1C-0p4-0p12.3mf",
+      "sha256": "3f3ab9e33fe63100ec020bd8be36b8d88e1dff2ccbe33ba6831bafa2a19341a4",
+      "kind": "sliced-project"
+    },
+    {
+      "file": "legacy-8mm-rail-50-PETG-X1C-0p4-0p20.3mf",
+      "source": "legacy-rail-50-print/legacy-8mm-rail-50-PETG-X1C-0p4-0p20.3mf",
+      "sha256": "ab5df4a67bfaefe53f3aeaace10d16585ccf922225f2979eb6a6b530db2553b5",
+      "kind": "sliced-project"
+    },
+    {
+      "file": "legacy-8mm-rail-300-PETG-X1C-0p4-0p20.3mf",
+      "source": "legacy-rail-300-print/legacy-8mm-rail-300-PETG-X1C-0p4-0p20.3mf",
+      "sha256": "158930a7881bbdd76e7c512be59cb4227d075d4d3a92e64e23c07b0ab8f04558",
+      "kind": "sliced-project"
+    }
+  ]
+}

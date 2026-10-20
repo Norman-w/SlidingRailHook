@@ -1,0 +1,15 @@
+[2026-10-19 11:11:18.838347] [0x00000001fa7be180] [trace]   Initializing StaticPrintConfigs
+[legacy-8mm-rail-300-PETG-X1C-0p4-0p20.3mf]
+size_x = 216.233246
+size_y = 216.233246
+size_z = 12.000000
+min_x = -108.116623
+min_y = -108.116623
+min_z = -6.000000
+max_x = 108.116623
+max_y = 108.116623
+max_z = 6.000000
+number_of_facets = 44
+manifold = yes
+number_of_parts =  1
+volume = 7139.993164

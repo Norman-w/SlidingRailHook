@@ -46,7 +46,7 @@ def verify(output, baseline):
             "watertight": True, "winding_consistent": True,
             "connected_solids": 1, "degenerate_faces": 0,
         }
-    assert np.allclose(parts["rail"]["size_mm"], [300, 12, 5.8], atol=1e-4)
+    assert np.allclose(parts["rail"]["size_mm"], [300, 12, 6], atol=1e-4)
     slider = solids["slider_hook"]
     # The rail is a constant-X extrusion: no hidden between-sample obstacle.
     positions = [0, 1, 5, 110, 141, 282]
